@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 // Staging (výchozí) běží na GitHub Pages pod /voltimo-staging.
 const isProd = process.env.SITE_ENV === "production";
 
-const basePath = isProd ? "" : "/voltimo-staging";
+const basePath = isProd ? "" : (process.env.BASE_PATH ?? "/voltimo-staging");
 const siteOrigin = isProd
   ? "https://www.voltimo.cz"
   : "https://admin-eccdigital.github.io";

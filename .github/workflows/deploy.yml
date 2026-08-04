@@ -28,7 +28,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          SITE_ENV: production
+          BASE_PATH: /voltimo-web
 
       - uses: actions/upload-pages-artifact@v3
         with:
