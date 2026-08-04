@@ -1,12 +1,41 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, CalendarClock, Check, MailCheck, Phone, Wallet } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import { ArrowRight, CalendarClock, Check, Loader2, MailCheck, Phone, Wallet } from "lucide-react";
 import { Button, Checkbox, Eyebrow, Heading, Input, Textarea } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
+import { submitLead } from "@/lib/form-submit";
 
 export function RekvForm() {
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
+  async function submit(e: FormEvent) {
+    e.preventDefault();
+    setError("");
+    setSending(true);
+
+    const fd = new FormData(e.currentTarget as HTMLFormElement);
+
+    try {
+      await submitLead({
+        form: "poptavka-rekvalifikace",
+        topic: "Voltimo.cz - Poptávka rekvalifikace",
+        name: fd.get("name") as string,
+        phone: fd.get("phone") as string,
+        email: (fd.get("email") as string) || undefined,
+        note: (fd.get("note") as string) || undefined,
+        gdpr: true,
+        url: window.location.href,
+      });
+      setDone(true);
+    } catch {
+      setError("Odeslání se nezdařilo. Zkuste to prosím znovu nebo zavolejte.");
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <section className="vlt-section vlt-section--subtle" id="poptavka">
@@ -31,13 +60,7 @@ export function RekvForm() {
                     Vyplníte během 2 minut. Nebo zavolejte na {LP_DATA.phone}.
                   </p>
                 </div>
-                <form
-                  className="lp-form"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setDone(true);
-                  }}
-                >
+                <form className="lp-form" onSubmit={submit}>
                   <div className="lp-form__row">
                     <Input label="Jméno a příjmení" required placeholder="Jan Novák" name="name" />
                     <Input label="Telefon" required type="tel" placeholder="+420 ..." name="phone" />
@@ -53,8 +76,9 @@ export function RekvForm() {
                     required
                     label="Souhlasím se zpracováním osobních údajů za účelem kontaktu ohledně rekvalifikace."
                   />
-                  <Button type="submit" variant="cta" size="lg" block icon={<ArrowRight />}>
-                    Odeslat nezávaznou poptávku
+                  {error && <p className="lp-form__error">{error}</p>}
+                  <Button type="submit" variant="cta" size="lg" block icon={sending ? <Loader2 className="animate-spin" /> : <ArrowRight />} disabled={sending}>
+                    {sending ? "Odesílám…" : "Odeslat nezávaznou poptávku"}
                   </Button>
                   <p className="lp-form__fine">
                     Bez závazků. Ozveme se vám a projdeme kroky přes úřad práce.

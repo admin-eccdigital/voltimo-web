@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   GraduationCap,
   Phone,
+  Loader2,
 } from "lucide-react";
 import {
   Section,
@@ -19,10 +20,13 @@ import {
 } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
+import { submitLead } from "@/lib/form-submit";
 import { FadeIn } from "./FadeIn";
 
 export function LpRegistration() {
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [term, setTerm] = useState<string>(LP_DATA.dates[0].title);
 
   useEffect(() => {
@@ -33,10 +37,31 @@ export function LpRegistration() {
     return () => window.removeEventListener("lp-pick-term", handler);
   }, []);
 
-  function submit(e: FormEvent) {
+  async function submit(e: FormEvent) {
     e.preventDefault();
-    setDone(true);
-    scrollToRegistration();
+    setError("");
+    setSending(true);
+
+    const fd = new FormData(e.currentTarget as HTMLFormElement);
+
+    try {
+      await submitLead({
+        form: "registrace-elektrikar",
+        topic: "Voltimo.cz - Registrace elektrikář",
+        name: fd.get("name") as string,
+        phone: fd.get("phone") as string,
+        email: (fd.get("email") as string) || undefined,
+        note: `Termín: ${term}`,
+        gdpr: true,
+        url: window.location.href,
+      });
+      setDone(true);
+      scrollToRegistration();
+    } catch {
+      setError("Odeslání se nezdařilo. Zkuste to prosím znovu nebo zavolejte.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -114,14 +139,16 @@ export function LpRegistration() {
                     required
                     label="Souhlasím se zpracováním osobních údajů za účelem kontaktu ohledně kurzu."
                   />
+                  {error && <p className="lp-form__error">{error}</p>}
                   <Button
                     type="submit"
                     variant="cta"
                     size="lg"
                     block
-                    icon={<ArrowRight />}
+                    icon={sending ? <Loader2 className="animate-spin" /> : <ArrowRight />}
+                    disabled={sending}
                   >
-                    Rezervovat termín nezávazně
+                    {sending ? "Odesílám…" : "Rezervovat termín nezávazně"}
                   </Button>
                   <p className="lp-form__fine">
                     Rezervace je nezávazná, při rezervaci nic neplatíte. Termín
