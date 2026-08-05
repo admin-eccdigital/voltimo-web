@@ -19,6 +19,7 @@ const ROUTES: { path: string; priority: number }[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.map(({ path, priority }) => ({
     url: `${SITE_URL}${path}/`,
+    lastModified: new Date("2026-08-05"),
     changeFrequency: "monthly",
     priority,
   }));

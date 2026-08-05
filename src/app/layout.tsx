@@ -34,9 +34,10 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
-  title: TITLE,
+  title: { default: TITLE, template: "%s | Voltimo" },
   description: DESCRIPTION,
   applicationName: "Voltimo",
+  alternates: { canonical: `${SITE_URL}/` },
   icons: {
     icon: `${BASE_PATH}/logo/favicon.svg`,
     apple: `${BASE_PATH}/icons/apple-touch-icon.png`,

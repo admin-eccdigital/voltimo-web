@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { LP_DATA } from "@/lib/lp-data";
 import { CookieSettingsLink } from "./CookieSettingsLink";
@@ -60,12 +61,12 @@ export function SiteFooter() {
           </div>
           <nav className="site-footer__nav" aria-label="Odkazy v patičce">
             <span className="site-footer__nav-h">Nabídka</span>
-            <a href={`${basePath}/elektrikar-za-10-dni/`}>Elektrikář za 10 dní</a>
-            <a href={`${basePath}/rekvalifikace/`}>Rekvalifikace přes ÚP</a>
-            <a href={`${basePath}/chlazeni/`}>Chlazení</a>
-            <a href={`${basePath}/o-nas/`}>O nás</a>
-            <a href={`${basePath}/faq/`}>Časté dotazy</a>
-            <a href={`${basePath}/kontakt/`}>Kontakt</a>
+            <Link href="/elektrikar-za-10-dni/">Elektrikář za 10 dní</Link>
+            <Link href="/rekvalifikace/">Rekvalifikace přes ÚP</Link>
+            <Link href="/chlazeni/">Chlazení</Link>
+            <Link href="/o-nas/">O nás</Link>
+            <Link href="/faq/">Časté dotazy</Link>
+            <Link href="/kontakt/">Kontakt</Link>
           </nav>
         </div>
         <div className="site-footer__legal">
@@ -73,8 +74,8 @@ export function SiteFooter() {
             © 2026 Voltimo · Středisko profesního vzdělávání · Přeštice
           </span>
           <span className="site-footer__legal-links">
-            <a href={`${basePath}/gdpr/`}>Zásady ochrany osobních údajů</a>
-            <a href={`${basePath}/vop/`}>Všeobecné obchodní podmínky</a>
+            <Link href="/gdpr/">Zásady ochrany osobních údajů</Link>
+            <Link href="/vop/">Všeobecné obchodní podmínky</Link>
             <CookieSettingsLink />
           </span>
         </div>

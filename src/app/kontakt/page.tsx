@@ -9,18 +9,49 @@ import {
 } from "lucide-react";
 import { Button, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { JsonLd } from "@/components/site";
+import { SITE_URL, ORG } from "@/lib/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "Kontakt — Voltimo",
+  title: "Kontakt",
   description:
     "Kontaktujte Středisko profesního vzdělávání VOLTIMO s.r.o. Telefon +420 601 002 989, e-mail info@voltimo.cz, Husova 380, Přeštice.",
+  alternates: { canonical: `${SITE_URL}/kontakt/` },
+  openGraph: {
+    title: "Kontakt — Voltimo",
+    description: "Telefon +420 601 002 989, e-mail info@voltimo.cz. Husova 380, Přeštice.",
+  },
+};
+
+const contactLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#organization`,
+  name: ORG.legalName,
+  url: `${SITE_URL}/`,
+  telephone: ORG.phone,
+  email: ORG.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: ORG.street,
+    addressLocality: ORG.city,
+    postalCode: ORG.zip,
+    addressCountry: ORG.country,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "17:00",
+  },
 };
 
 export default function KontaktPage() {
   return (
     <>
+      <JsonLd data={contactLd} />
       {/* HERO */}
       <section className="kt-hero">
         <div className="kt-hero__grid" aria-hidden="true" />

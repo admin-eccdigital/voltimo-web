@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Zásady zpracování osobních údajů — Voltimo",
+  title: "Zásady zpracování osobních údajů",
   description:
     "Zásady zpracování osobních údajů (GDPR) Střediska profesního vzdělávání VOLTIMO s.r.o. Účinné od 1. 3. 2026.",
+  alternates: { canonical: `${SITE_URL}/gdpr/` },
 };
 
 export default function GdprPage() {

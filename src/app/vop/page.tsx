@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { SITE_URL } from "@/lib/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "Všeobecné obchodní podmínky — Voltimo",
+  title: "Všeobecné obchodní podmínky",
   description:
     "Všeobecné obchodní podmínky (VOP) pro kurzy a zkoušky Střediska profesního vzdělávání VOLTIMO s.r.o. Platné od 1. 3. 2026.",
+  alternates: { canonical: `${SITE_URL}/vop/` },
 };
 
 export default function VopPage() {

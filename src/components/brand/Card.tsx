@@ -15,7 +15,7 @@ export function Card({
   children,
   variant = "default",
   media,
-  mediaAlt = "",
+  mediaAlt,
   interactive = false,
   href,
   className = "",
@@ -35,7 +35,7 @@ export function Card({
         <Image
           className="vlt-card__media"
           src={media}
-          alt={mediaAlt}
+          alt={mediaAlt ?? ""}
           width={640}
           height={400}
         />

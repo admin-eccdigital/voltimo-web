@@ -3,13 +3,19 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { SITE_URL } from "@/lib/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "O nás — Voltimo",
+  title: "O nás",
   description:
     "Středisko profesního vzdělávání VOLTIMO s.r.o. Učíme řemeslo tak, aby ho člověk uměl. Přeštice, Plzeňsko.",
+  alternates: { canonical: `${SITE_URL}/o-nas/` },
+  openGraph: {
+    title: "O nás — Voltimo",
+    description: "Středisko profesního vzdělávání VOLTIMO s.r.o. Učíme řemeslo tak, aby ho člověk uměl.",
+  },
 };
 
 const BENEFITS: readonly { title: string; text: string; featured?: boolean }[] = [

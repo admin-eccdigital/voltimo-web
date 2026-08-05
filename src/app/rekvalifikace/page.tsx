@@ -12,9 +12,14 @@ import { SITE_URL, ORG } from "@/lib/site";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "Rekvalifikace elektrikář přes úřad práce — Montér elektrických instalací | Voltimo",
+  title: "Rekvalifikace elektrikář přes úřad práce — Montér elektrických instalací",
   description:
-    "Rekvalifikační kurz Montér elektrických instalací (26-017-H), akreditace MŠMT. 120 hodin prezenčně v Přešticích, zakončeno zkouškou a osvědčením. Hradí úřad práce, spoluúčast 0 Kč. Termín 2. 11. – 4. 12. 2026.",
+    "Rekvalifikační kurz Montér elektrických instalací (26-017-H). 120 hodin prezenčně v Přešticích, hradí úřad práce. Termín 2. 11. – 4. 12. 2026.",
+  alternates: { canonical: `${SITE_URL}/rekvalifikace/` },
+  openGraph: {
+    title: "Rekvalifikace elektrikář přes úřad práce | Voltimo",
+    description: "Akreditovaný kurz Montér elektrických instalací (26-017-H). 120 hodin, hradí úřad práce, spoluúčast 0 Kč.",
+  },
 };
 
 const courseLd = {

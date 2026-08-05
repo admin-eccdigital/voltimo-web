@@ -17,9 +17,14 @@ import { JsonLd } from "@/components/site";
 import { SITE_URL, ORG } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Elektrikář za 10 dní — Voltimo",
+  title: "Elektrikář za 10 dní",
   description:
     "Úplná kvalifikace Elektrikář za 10 dní výcviku. Praxe, zkouška §6 a státní osvědčení. Prezenční výcvik v Přešticích.",
+  alternates: { canonical: `${SITE_URL}/elektrikar-za-10-dni/` },
+  openGraph: {
+    title: "Elektrikář za 10 dní — Voltimo",
+    description: "Úplná kvalifikace za 10 dní výcviku. Praxe, zkouška §6 a státní osvědčení. Přeštice.",
+  },
 };
 
 const courseLd = {

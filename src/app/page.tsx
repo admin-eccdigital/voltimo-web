@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, GraduationCap, Landmark } from "lucide-react";
 import { Button, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { SITE_URL } from "@/lib/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
   title: "Voltimo — Středisko profesního vzdělávání",
   description:
     "Z praxe ke kvalifikaci nejkratší cestou. Státní osvědčení, které uznává úřad i zaměstnavatel a otevře cestu na vlastní živnost. Přeštice, Plzeňsko.",
+  alternates: { canonical: `${SITE_URL}/` },
+  openGraph: {
+    title: "Voltimo — Středisko profesního vzdělávání v elektrotechnice",
+    description: "Z praxe ke kvalifikaci nejkratší cestou. Státní osvědčení, které uznává úřad i zaměstnavatel. Přeštice, Plzeňsko.",
+  },
 };
 
 const STEPS: readonly { title: string; text: string }[] = [

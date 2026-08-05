@@ -4,13 +4,19 @@ import type { ReactNode } from "react";
 import { Button, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
 import { JsonLd } from "@/components/site";
+import { SITE_URL } from "@/lib/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "FAQ — Voltimo",
+  title: "Časté dotazy",
   description:
     "Nejčastější dotazy o profesních kvalifikacích, kurzech a zkouškách NSK ve Středisku profesního vzdělávání VOLTIMO.",
+  alternates: { canonical: `${SITE_URL}/faq/` },
+  openGraph: {
+    title: "Časté dotazy — Voltimo",
+    description: "Odpovědi na nejčastější otázky o kurzech, zkouškách a profesních kvalifikacích.",
+  },
 };
 
 // Textové verze odpovědí pro strukturovaná data (FAQPage rich results).

@@ -8,13 +8,20 @@ import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/
 import { FadeIn } from "@/components/lp/FadeIn";
 import { ChlForm } from "@/components/chlazeni/ChlForm";
 import { ChlSticky } from "@/components/chlazeni/ChlSticky";
+import { JsonLd } from "@/components/site";
+import { SITE_URL, ORG } from "@/lib/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "Chlazení — profesní kvalifikace 23-054 + 23-055 za 4 dny | Voltimo",
+  title: "Chlazení — profesní kvalifikace 23-054 + 23-055 za 4 dny",
   description:
-    "Děláte chlazení? Získejte papír za 4 dny. Dva dny příprava, dva dny zkoušky, dvě osvědčení NSK pro malá i velká chladicí zařízení a tepelná čerpadla. Přeštice, prázdninová sleva 20 % do 31. 8. 2026.",
+    "Získejte profesní kvalifikaci v chlazení za 4 dny. Dvě osvědčení NSK pro chladicí zařízení a tepelná čerpadla. Prezenčně v Přešticích.",
+  alternates: { canonical: `${SITE_URL}/chlazeni/` },
+  openGraph: {
+    title: "Chlazení — profesní kvalifikace za 4 dny | Voltimo",
+    description: "Dvě osvědčení NSK pro malá i velká chladicí zařízení a tepelná čerpadla. 4 dny prezenčně v Přešticích.",
+  },
 };
 
 const PRICE_FULL = "25 000 Kč";
@@ -79,9 +86,62 @@ const CHL_DATES = [
   { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Zbývá 5 míst", low: false, featured: false },
 ] as const;
 
+const courseLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "Chlazení — profesní kvalifikace 23-054 + 23-055",
+  description:
+    "Profesní kvalifikace Servisní mechanik chladicích a klimatizačních zařízení. Dvě osvědčení NSK za 4 dny prezenčního výcviku v Přešticích.",
+  url: `${SITE_URL}/chlazeni/`,
+  inLanguage: "cs",
+  provider: {
+    "@type": "EducationalOrganization",
+    "@id": `${SITE_URL}/#organization`,
+    name: ORG.legalName,
+    url: `${SITE_URL}/`,
+  },
+  hasCourseInstance: [
+    {
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      startDate: "2026-09-07",
+      endDate: "2026-09-10",
+      location: {
+        "@type": "Place",
+        name: ORG.legalName,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: ORG.street,
+          addressLocality: ORG.city,
+          postalCode: ORG.zip,
+          addressCountry: ORG.country,
+        },
+      },
+    },
+    {
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      startDate: "2026-10-06",
+      endDate: "2026-10-09",
+      location: {
+        "@type": "Place",
+        name: ORG.legalName,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: ORG.street,
+          addressLocality: ORG.city,
+          postalCode: ORG.zip,
+          addressCountry: ORG.country,
+        },
+      },
+    },
+  ],
+};
+
 export default function ChlazeniPage() {
   return (
     <>
+      <JsonLd data={courseLd} />
       {/* HERO */}
       <section className="lp-hero">
         <div
