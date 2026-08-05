@@ -14,15 +14,19 @@
   pointer-events: auto;
   width: 100%;
   max-width: 1000px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
   padding: 18px 22px;
   background: var(--voltimo-primary);
   color: #fff;
   border-radius: var(--radius-lg);
   box-shadow: 0 10px 44px rgba(15, 23, 41, 0.35);
+}
+.cookie-bar__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 .cookie-bar__text {
   flex: 1 1 320px;
@@ -65,6 +69,64 @@
   background: var(--voltimo-yellow-hover);
 }
 
+/* Rozbalené kategorie */
+.cookie-bar__categories {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  gap: 14px;
+}
+.cookie-cat {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.cookie-cat:has(.cookie-cat__input:disabled) {
+  cursor: default;
+}
+.cookie-cat__input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--voltimo-yellow);
+  cursor: inherit;
+}
+.cookie-cat__body {
+  display: grid;
+  gap: 2px;
+}
+.cookie-cat__name {
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cookie-cat__always {
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.14);
+  color: #EAEEF6;
+}
+.cookie-cat__desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #C9D3E4;
+}
+.cookie-bar__save {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
 /* Odkaz „Nastavení cookies" v patičce – vypadá jako ostatní odkazy */
 .cookie-settings-link {
   background: none;
@@ -81,14 +143,18 @@
 }
 
 @media (max-width: 640px) {
-  .cookie-bar__inner {
+  .cookie-bar__head {
     flex-direction: column;
     align-items: stretch;
   }
   .cookie-bar__actions {
+    flex-wrap: wrap;
     justify-content: stretch;
   }
   .cookie-bar__btn {
-    flex: 1;
+    flex: 1 1 auto;
+  }
+  .cookie-bar__save .cookie-bar__btn {
+    width: 100%;
   }
 }

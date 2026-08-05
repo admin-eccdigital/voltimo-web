@@ -4,7 +4,7 @@ import {
   SiteHeader,
   SiteFooter,
   JsonLd,
-  Analytics,
+  Gtm,
   CookieConsent,
 } from "@/components/site";
 import { BASE_PATH, SITE_ORIGIN, SITE_URL, NOINDEX, ORG } from "@/lib/site";
@@ -89,6 +89,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className={`${sourceSans.variable} antialiased`}>
+      <head>
+        <Gtm />
+      </head>
       <body>
         <a
           href="#hlavni-obsah"
@@ -100,7 +103,6 @@ export default function RootLayout({
         <main id="hlavni-obsah">{children}</main>
         <SiteFooter />
         <CookieConsent />
-        <Analytics />
         <JsonLd data={organizationLd} />
       </body>
     </html>

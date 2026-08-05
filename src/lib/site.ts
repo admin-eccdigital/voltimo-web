@@ -13,8 +13,8 @@ export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}`;
 /** Na stagingu true → celý web se neindexuje. Na produkci prázdné. */
 export const NOINDEX = (process.env.NEXT_PUBLIC_NOINDEX ?? "") === "true";
 
-/** GA4 Measurement ID (G-XXXXXXX). Prázdné = analytika se nenačte. */
-export const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
+/** GTM kontejner. Veškeré měření (GA4, Ads, Sklik, FB) se konfiguruje v něm. */
+export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "";
 
 /** Firemní / kontaktní údaje pro strukturovaná data a patičku. */
 export const ORG = {

@@ -22,8 +22,12 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SITE_ORIGIN: siteOrigin,
     // Staging se neindexuje; na produkci se noindex vypne.
     NEXT_PUBLIC_NOINDEX: isProd ? "" : "true",
-    // GA4 Measurement ID – nastav přes prostředí (CI secret) až bude k dispozici.
-    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID ?? "",
+    // GTM kontejner www.voltimo.cz. Veškeré měření (GA4, Ads, Sklik, FB)
+    // se konfiguruje uvnitř kontejneru, ne v kódu.
+    // Staging je záměrně bez měření, aby netekl do produkčních dat —
+    // pro test lze přes env podstrčit testovací kontejner.
+    NEXT_PUBLIC_GTM_ID:
+      process.env.NEXT_PUBLIC_GTM_ID ?? (isProd ? "GTM-PZ8XMNPH" : ""),
   },
 };
 
