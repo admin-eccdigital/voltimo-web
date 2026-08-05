@@ -21,6 +21,7 @@ export function ChlForm() {
     try {
       await submitLead({
         form: "poptavka-chlazeni",
+        formType: "poptavka",
         topic: "Voltimo.cz - Poptávka chlazení",
         name: fd.get("name") as string,
         phone: fd.get("phone") as string,

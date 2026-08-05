@@ -21,6 +21,7 @@ export function RekvForm() {
     try {
       await submitLead({
         form: "poptavka-rekvalifikace",
+        formType: "poptavka",
         topic: "Voltimo.cz - Poptávka rekvalifikace",
         name: fd.get("name") as string,
         phone: fd.get("phone") as string,

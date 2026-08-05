@@ -47,6 +47,7 @@ export function LpRegistration() {
     try {
       await submitLead({
         form: "registrace-elektrikar",
+        formType: "registrace",
         topic: "Voltimo.cz - Registrace elektrikář",
         name: fd.get("name") as string,
         phone: fd.get("phone") as string,
