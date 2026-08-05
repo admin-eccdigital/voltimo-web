@@ -4,8 +4,8 @@ compatibility_date = "2024-12-01"
 
 [vars]
 ALLOWED_ORIGIN = "https://admin-eccdigital.github.io"
+RAYNET_INSTANCE = "voltimo"
 
 # Secrets (set via `wrangler secret put`):
-# RAYNET_API_URL    – e.g. https://app.raynet.cz/api/v2
-# RAYNET_USERNAME   – Raynet login email
+# RAYNET_USERNAME   – tykal@voltimo.cz
 # RAYNET_API_KEY    – Raynet API key

@@ -1,6 +1,6 @@
 interface Env {
   ALLOWED_ORIGIN: string;
-  RAYNET_API_URL: string;
+  RAYNET_INSTANCE: string;
   RAYNET_USERNAME: string;
   RAYNET_API_KEY: string;
 }
@@ -62,33 +62,30 @@ export default {
 async function createRaynetLead(env: Env, payload: LeadPayload): Promise<void> {
   const auth = btoa(`${env.RAYNET_USERNAME}:${env.RAYNET_API_KEY}`);
 
-  // TODO: Adjust endpoint and field mapping based on Raynet instance setup.
-  // This mirrors the CF7 integration: creates a lead with topic, contact info, and note.
+  const noticeParts = [
+    payload.note ?? "",
+    `Form ID: ${payload.form_id}`,
+    `Url: ${payload.url}`,
+    `GDPR souhlas: ano`,
+  ].filter(Boolean);
+
   const body = {
     topic: payload.topic,
     priority: "DEFAULT",
-    notice: [
-      payload.note ?? "",
-      `Formulář: ${payload.form}`,
-      `URL: ${payload.url}`,
-      `Form ID: ${payload.form_id}`,
-      `GDPR souhlas: ${payload.gdpr ? "ano" : "ne"}`,
-    ]
-      .filter(Boolean)
-      .join("\n"),
+    companyName: payload.name,
     contactInfo: {
-      name: payload.name,
-      tel: payload.phone,
       email: payload.email ?? "",
+      tel1: payload.phone,
     },
+    notice: noticeParts.join(" "),
   };
 
-  const res = await fetch(`${env.RAYNET_API_URL}/lead/`, {
+  const res = await fetch("https://app.raynet.cz/api/v2/lead/", {
     method: "PUT",
     headers: {
       Authorization: `Basic ${auth}`,
       "Content-Type": "application/json",
-      "X-Instance-Name": extractInstance(env.RAYNET_API_URL),
+      "X-Instance-Name": env.RAYNET_INSTANCE,
     },
     body: JSON.stringify(body),
   });
@@ -97,9 +94,4 @@ async function createRaynetLead(env: Env, payload: LeadPayload): Promise<void> {
     const text = await res.text().catch(() => "");
     throw new Error(`Raynet ${res.status}: ${text}`);
   }
-}
-
-function extractInstance(apiUrl: string): string {
-  const match = apiUrl.match(/\/\/([^.]+)\./);
-  return match?.[1] ?? "app";
 }
