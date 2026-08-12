@@ -193,7 +193,7 @@ export default function RekvalifikacePage() {
               <ul className="lp-outcome__list">
                 <li><span className="lp-check"><GraduationCap size={15} /></span>80 hodin teorie a 40 hodin praxe, prezenčně v Přešticích.</li>
                 <li><span className="lp-check"><ClipboardCheck size={15} /></span>Zkouška (8 h): písemný test a praktické předvedení před autorizovanou osobou.</li>
-                <li><span className="lp-check"><Award size={15} /></span>Po úspěchu osvědčení o profesní kvalifikaci a potvrzení o účasti.</li>
+                <li><span className="lp-check"><Award size={15} /></span>Po úspěšné zkoušce získáte osvědčení o profesní kvalifikaci a potvrzení o účasti.</li>
               </ul>
             </div>
 

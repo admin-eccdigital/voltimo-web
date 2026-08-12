@@ -33,13 +33,13 @@ const STEPS: readonly { title: string; text: string }[] = [
   },
   {
     title: "Osvědčení a další cesta",
-    text: "Získáte Osvědčení o získání profesní kvalifikace. A můžete pokračovat dál, třeba až k úplné profesní kvalifikaci a tím vlastnímu podnikání.",
+    text: "Získáte státní osvědčení, které uzná úřad i zaměstnavatel. U elektrikáře je to rovnou úplná profesní kvalifikace, se kterou můžete začít podnikat.",
   },
 ];
 
 const SOUL_COLS: readonly string[] = [
   "Nejsme další vzdělávací agentura. Řemeslo má smysl a šikovný člověk si zaslouží papír, který jeho práci uzná.",
-  "Učíme na reálných zařízeních, ne z prezentací. Nářadí chytnete první den a všechno vám vysvětlíme, aby vám to sedlo.",
+  "Učíme na reálných zařízeních, ne z prezentací. Nářadí vezmete do ruky hned první den a všechno vám u toho vysvětlíme, aby vám to dávalo smysl.",
   "Nejsme anonymní instituce. Jsme lidi z oboru. Provedeme vás od první otázky až po osvědčení.",
 ];
 

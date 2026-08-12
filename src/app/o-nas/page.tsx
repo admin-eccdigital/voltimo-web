@@ -64,7 +64,7 @@ export default function ONasPage() {
             </h1>
             <p className="onas-hero__lead">
               Učíme řemeslo tak, aby ho člověk uměl. Ať už se chystáte začít
-              novou kariéru, dodělat si kvalifikaci, nebo rozšířit, co umíte, a
+              novou kariéru, dodělat si kvalifikaci, nebo rozšířit, co umíte,
               u nás najdete pevnou půdu pod nohama.
             </p>
             <p className="onas-hero__meta">

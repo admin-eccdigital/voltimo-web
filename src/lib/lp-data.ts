@@ -25,6 +25,15 @@ export const LP_DATA = {
       featured: true,
     },
     {
+      d: "21",
+      m: "ZÁŘ",
+      title: "Zářijový běh",
+      range: "Příprava 21. – 25. 9. · zkoušky 28. 9. – 2. 10. 2026",
+      cap: "Zbývají 3 místa",
+      capLevel: "low" as "low" | "ok",
+      featured: false,
+    },
+    {
       d: "12",
       m: "ŘÍJ",
       title: "Říjnový běh",

@@ -43,7 +43,7 @@ const QUICK = [
 ] as const;
 
 const PILLARS = [
-  { ic: Wrench, t: "Praktická výuka", d: "Prezenčně, v malé skupině, na reálných chladivových okruzích. Žádný online, žádná videa." },
+  { ic: Wrench, t: "Praktická výuka", d: "Prezenčně, v malé skupině, na reálných chladicích zařízeních. Žádný online, žádná videa." },
   { ic: Users, t: "Malá skupina", d: "Víc prostoru na otázky, vysvětlení i pochopení. Nikdy v davu." },
   { ic: Scissors, t: "Co nepoužijete, neučíme", d: "Neučíte se pro test. Učíte se pro realitu, kterou pak přenesete na zakázku." },
   { ic: Signpost, t: "Jasný další krok", d: "Po zkoušce máte v ruce dvě osvědčení NSK. Otevírá se vám cesta k živnosti." },
@@ -313,7 +313,7 @@ export default function ChlazeniPage() {
                   <Heading level={2}>Jan Jasanský</Heading>
                   <p className="lp-head__sub">
                     Lektor pro elektro i chlazení. Učí prakticky, na reálných
-                    okruzích. Vysvětlí vám přesně to, co potřebujete u zkoušky
+                    zařízeních. Vysvětlí vám přesně to, co potřebujete u zkoušky
                     i na zakázce.
                   </p>
                 </div>
@@ -371,7 +371,7 @@ export default function ChlazeniPage() {
                   <span className="chl-packcard__day" />
                 </div>
                 <p>
-                  Teorie i praktická cvičení na reálných okruzích. Procházíme s vámi vše, co budete
+                  Teorie i praktická cvičení na reálných zařízeních. Procházíme s vámi vše, co budete
                   u zkoušky potřebovat.
                 </p>
               </div>
@@ -397,7 +397,7 @@ export default function ChlazeniPage() {
           <div className="lp-outcome">
             <div>
               <div className="lp-head">
-                <Eyebrow>Co odejdete s sebou</Eyebrow>
+                <Eyebrow>Co si odnesete</Eyebrow>
                 <Heading level={2}>Dvě osvědčení NSK. Po čtvrtém dni v ruce.</Heading>
                 <p className="lp-head__sub">
                   Pro malá i velká chladicí a klimatizační zařízení a tepelná čerpadla. Papír, který
@@ -471,9 +471,9 @@ export default function ChlazeniPage() {
             <FadeIn>
               <div className="chl-day chl-day--feat">
                 <span className="chl-day__code"><Hammer size={15} />Příprava · 2 dny</span>
-                <h3>Příprava na reálných okruzích</h3>
+                <h3>Příprava na reálných zařízeních</h3>
                 <p>
-                  Teorie i praktická cvičení na reálných chladivových okruzích. Projdeme s vámi{" "}
+                  Teorie i praktická cvičení na reálných chladicích zařízeních. Projdeme s vámi{" "}
                   <strong>přesně to, co budete u zkoušky potřebovat.</strong>
                 </p>
               </div>
