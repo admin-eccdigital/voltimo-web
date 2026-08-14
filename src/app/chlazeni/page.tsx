@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck,
-  BadgePercent, Flame, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
+  BadgePercent, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
@@ -529,12 +529,6 @@ export default function ChlazeniPage() {
                   <strong>{t.title}</strong>
                   <span>{t.range}</span>
                 </div>
-                <span
-                  className={`lp-date__cap ${t.low ? "lp-date__cap--low" : "lp-date__cap--ok"}`}
-                >
-                  {t.low ? <Flame /> : <Users />}
-                  {t.cap}
-                </span>
                 <Button
                   variant={t.featured ? "cta" : "outline"}
                   icon={<ArrowRight />}

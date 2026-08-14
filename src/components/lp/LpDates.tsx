@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Flame, Users, CalendarClock, Bell } from "lucide-react";
+import { ArrowRight, CalendarClock, Bell } from "lucide-react";
 import { Section, Eyebrow, Heading, Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
@@ -39,12 +39,6 @@ export function LpDates() {
                 <strong>{t.title}</strong>
                 <span>{t.range}</span>
               </div>
-              <span
-                className={`lp-date__cap ${t.capLevel === "low" ? "lp-date__cap--low" : "lp-date__cap--ok"}`}
-              >
-                {t.capLevel === "low" ? <Flame /> : <Users />}
-                {t.cap}
-              </span>
               <Button
                 variant={t.featured ? "cta" : "outline"}
                 icon={<ArrowRight />}
