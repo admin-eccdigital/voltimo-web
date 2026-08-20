@@ -28,7 +28,6 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          SITE_ENV: production
           NEXT_PUBLIC_FORM_WORKER_URL: https://voltimo-forms.royal-silence-27df.workers.dev
 
       - uses: actions/upload-pages-artifact@v3
