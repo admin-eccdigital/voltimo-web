@@ -10,6 +10,7 @@
 @import "../styles/faq.css";
 @import "../styles/legal.css";
 @import "../styles/cookie.css";
+@import "../styles/poradna.css";
 
 @theme inline {
   --color-voltimo-primary: #1E3876;

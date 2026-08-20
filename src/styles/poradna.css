@@ -1,0 +1,440 @@
+/* ============================================================
+   PORADNA — přehled i detail článku (brand Voltimo)
+   ============================================================ */
+
+/* ---- Přehledová stránka ---- */
+.poradna-hero {
+  background: var(--voltimo-primary);
+  color: var(--text-on-dark);
+  padding: var(--space-2xl) var(--container-pad);
+}
+.poradna-hero__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+.poradna-hero__inner .vlt-eyebrow { color: var(--voltimo-yellow); }
+.poradna-hero__inner h1 { color: #fff; margin: 10px 0 12px; }
+.poradna-hero__lead {
+  max-width: 620px;
+  font-size: 18px;
+  line-height: var(--lh-body);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.poradna-featured {
+  padding: var(--space-2xl) var(--container-pad) 0;
+}
+.poradna-featured__card {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 0;
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+.poradna-featured__card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.poradna-featured__img { position: relative; min-height: 260px; }
+.poradna-featured__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.poradna-featured__body { padding: clamp(22px, 3vw, 38px); align-self: center; }
+.poradna-featured__tag {
+  display: inline-block;
+  background: var(--voltimo-yellow);
+  color: var(--text-on-yellow);
+  font-size: 12px;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+.poradna-featured__body h2 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: var(--lh-tight);
+  color: var(--text-heading);
+  margin: 14px 0 10px;
+}
+.poradna-featured__body p { color: var(--text-muted); margin: 0 0 16px; }
+.poradna-featured__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--voltimo-primary);
+  font-weight: var(--fw-bold);
+}
+
+.poradna-entries { padding: var(--space-2xl) var(--container-pad) 0; }
+.poradna-entries__grid {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+.poradna-entry {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+.poradna-entry strong { display: block; color: var(--voltimo-primary); font-size: 16px; }
+.poradna-entry span { display: block; margin-top: 4px; color: var(--text-muted); font-size: var(--fs-small); }
+
+.poradna-list { padding: var(--space-2xl) var(--container-pad) var(--space-3xl); }
+.poradna-list__grid {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+.poradna-listcard {
+  display: block;
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.poradna-listcard:hover { border-color: var(--voltimo-sky); box-shadow: var(--shadow-md); }
+.poradna-listcard__cat {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--voltimo-sky);
+  font-weight: var(--fw-semibold);
+}
+.poradna-listcard h3 { color: var(--text-heading); font-size: 19px; margin: 8px 0 8px; line-height: var(--lh-tight); }
+.poradna-listcard p { color: var(--text-muted); font-size: var(--fs-small); margin: 0; }
+
+/* ---- Detail článku ---- */
+.poradna-article { background: var(--surface-page); padding: 0 var(--container-pad) var(--space-3xl); }
+.poradna-article__wrap { max-width: 760px; margin-inline: auto; }
+
+.poradna-crumbs { font-size: 13px; color: var(--text-muted); padding: 20px 0 0; }
+.poradna-crumbs a { color: var(--text-muted); text-decoration: none; }
+.poradna-crumbs a:hover { color: var(--voltimo-primary); }
+.poradna-crumbs span { color: var(--text-body); }
+
+.poradna-article__head { padding: 18px 0 0; }
+.poradna-article__kicker {
+  color: var(--voltimo-primary);
+  font-weight: var(--fw-bold);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.poradna-article__title {
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: var(--lh-tight);
+  color: var(--text-heading);
+  margin: 8px 0 10px;
+  text-wrap: balance;
+}
+.poradna-article__meta {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  border-bottom: 1px solid var(--border-default);
+  padding-bottom: 18px;
+  margin: 0;
+}
+
+.poradna-article__hero {
+  margin: 22px 0 4px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.poradna-article__hero img { width: 100%; height: auto; display: block; }
+
+.poradna-answer {
+  background: var(--voltimo-primary-soft);
+  border-left: 4px solid var(--voltimo-primary);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-size: 17.5px;
+  line-height: var(--lh-body);
+  color: var(--text-body);
+}
+.poradna-answer strong { color: var(--voltimo-primary); }
+
+.poradna-toc {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 0 0 26px;
+}
+.poradna-toc b {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.poradna-toc ol { margin: 8px 0 0; padding-left: 20px; }
+.poradna-toc li { margin: 4px 0; }
+.poradna-toc a { color: var(--voltimo-primary); text-decoration: none; }
+.poradna-toc a:hover { text-decoration: underline; }
+
+/* Tělo článku (MDX) */
+.poradna-body { font-size: 17px; line-height: 1.65; color: var(--text-body); }
+.poradna-body h2 {
+  font-size: 23px;
+  line-height: var(--lh-tight);
+  color: var(--text-heading);
+  margin: 36px 0 10px;
+  scroll-margin-top: 90px;
+}
+.poradna-body h3 { font-size: 18px; color: var(--text-heading); margin: 24px 0 6px; scroll-margin-top: 90px; }
+.poradna-body p { margin: 0 0 14px; }
+.poradna-body a { color: var(--voltimo-primary); text-decoration: underline; text-underline-offset: 2px; }
+.poradna-body ul { margin: 6px 0 16px; padding-left: 22px; }
+.poradna-body ul li { margin: 5px 0; }
+.poradna-body strong { color: var(--text-heading); }
+
+.poradna-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 18px 0;
+  font-size: 15.5px;
+}
+.poradna-body th,
+.poradna-body td {
+  border: 1px solid var(--border-default);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.poradna-body th { background: var(--voltimo-primary-soft); color: var(--voltimo-primary); font-weight: var(--fw-bold); }
+
+/* Box "Z praxe Voltimo" */
+.poradna-box { border-radius: var(--radius-lg); padding: 18px 22px; margin: 26px 0; }
+.poradna-box--praxe { background: var(--voltimo-yellow-soft); border: 1px solid var(--voltimo-yellow); }
+.poradna-box__tag {
+  display: inline-block;
+  background: var(--voltimo-yellow);
+  color: var(--text-on-yellow);
+  font-weight: var(--fw-bold);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+}
+.poradna-box__body { margin-top: 10px; }
+.poradna-box__body p:last-child { margin-bottom: 0; }
+
+/* Box "Pozor / omyly" (warn — mimo brand paletu, sémanticky) */
+.poradna-box--pozor { background: #fff5f0; border: 1px solid #f2d3c4; }
+.poradna-box--pozor p { margin: 0 0 12px; }
+.poradna-box--pozor p:last-child { margin-bottom: 0; }
+.poradna-box--pozor strong { color: #b5651d; }
+
+/* Číslovaný postup */
+.poradna-steps ol { counter-reset: s; list-style: none; padding: 0; margin: 16px 0; }
+.poradna-steps ol li {
+  counter-increment: s;
+  position: relative;
+  padding: 3px 0 14px 46px;
+  margin: 0;
+}
+.poradna-steps ol li::before {
+  content: counter(s);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--voltimo-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: 15px;
+}
+.poradna-steps ol li strong { color: var(--text-heading); }
+
+/* Infografika — cesta ke kvalifikaci */
+.poradna-flow {
+  margin: 28px 0;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+}
+.poradna-flow__cap {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 14px;
+}
+.poradna-flow__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.poradna-flow__step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+.poradna-flow__num {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: var(--voltimo-primary);
+  color: var(--voltimo-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+}
+.poradna-flow__body { display: flex; flex-direction: column; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-md); padding: 10px 14px; flex: 1; }
+.poradna-flow__body strong { color: var(--text-heading); font-size: 15.5px; }
+.poradna-flow__body small { color: var(--text-muted); font-size: 13px; }
+.poradna-flow__arrow { display: none; }
+
+/* CTA v článku */
+.poradna-cta {
+  background: linear-gradient(135deg, var(--voltimo-primary), var(--voltimo-primary-hover));
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: 28px 30px;
+  margin: 34px 0;
+  text-align: center;
+}
+.poradna-cta h3 { color: #fff; margin: 0 0 8px; font-size: 22px; }
+.poradna-cta p { color: rgba(255, 255, 255, 0.85); margin: 0 auto 18px; max-width: 520px; }
+.poradna-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--voltimo-yellow);
+  color: var(--text-on-yellow);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  padding: 13px 26px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+}
+.poradna-cta__btn:hover { background: var(--voltimo-yellow-hover); }
+
+/* Fotka v textu */
+.poradna-figure { margin: 26px 0; }
+.poradna-figure img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
+.poradna-figure figcaption { margin-top: 8px; font-size: 13.5px; color: var(--text-muted); text-align: center; }
+
+/* Klíčová myšlenka (pull-quote) */
+.poradna-key {
+  font-size: clamp(20px, 2.4vw, 24px);
+  line-height: 1.35;
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+  border-left: 4px solid var(--voltimo-yellow);
+  padding: 4px 0 4px 20px;
+  margin: 30px 0;
+}
+
+/* Kompaktní CTA uprostřed článku */
+.poradna-cta-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+  flex-wrap: wrap;
+  background: var(--voltimo-primary-soft);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 16px 22px;
+  margin: 30px 0;
+}
+.poradna-cta-inline__text { font-weight: var(--fw-semibold); color: var(--voltimo-primary); font-size: 16.5px; }
+.poradna-cta-inline__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--voltimo-yellow);
+  color: var(--text-on-yellow);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  font-size: 15px;
+}
+.poradna-cta-inline__btn:hover { background: var(--voltimo-yellow-hover); }
+
+/* FAQ */
+.poradna-faq { margin: 34px 0 10px; }
+.poradna-faq h2 { font-size: 23px; color: var(--text-heading); margin: 0 0 6px; }
+.poradna-faq details { border-bottom: 1px solid var(--border-default); padding: 14px 0; }
+.poradna-faq summary { font-weight: var(--fw-semibold); cursor: pointer; font-size: 16.5px; list-style: none; color: var(--text-heading); }
+.poradna-faq summary::-webkit-details-marker { display: none; }
+.poradna-faq summary::before { content: "+ "; color: var(--voltimo-primary); font-weight: var(--fw-bold); }
+.poradna-faq details[open] summary::before { content: "– "; }
+.poradna-faq p { margin: 10px 0 2px; color: var(--text-muted); }
+
+/* Související */
+.poradna-related {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  margin: 28px 0;
+}
+.poradna-related b {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.poradna-related a,
+.poradna-related__soon {
+  display: block;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--border-default);
+  color: var(--voltimo-primary);
+  text-decoration: none;
+}
+.poradna-related a:last-child,
+.poradna-related__soon:last-child { border-bottom: none; }
+.poradna-related a:hover { text-decoration: underline; }
+.poradna-related__soon { color: var(--text-muted); }
+.poradna-related__soon em { font-style: normal; font-size: 12px; color: var(--voltimo-sky); }
+
+.poradna-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 28px;
+  border-top: 1px solid var(--border-default);
+  padding-top: 16px;
+}
+
+@media (max-width: 720px) {
+  .poradna-featured__card { grid-template-columns: 1fr; }
+  .poradna-featured__img { min-height: 200px; }
+}
