@@ -340,6 +340,51 @@
 }
 .poradna-cta__btn:hover { background: var(--voltimo-yellow-hover); }
 
+/* Fotka v textu */
+.poradna-figure { margin: 26px 0; }
+.poradna-figure img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
+.poradna-figure figcaption { margin-top: 8px; font-size: 13.5px; color: var(--text-muted); text-align: center; }
+
+/* Klíčová myšlenka (pull-quote) */
+.poradna-key {
+  font-size: clamp(20px, 2.4vw, 24px);
+  line-height: 1.35;
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+  border-left: 4px solid var(--voltimo-yellow);
+  padding: 4px 0 4px 20px;
+  margin: 30px 0;
+}
+
+/* Kompaktní CTA uprostřed článku */
+.poradna-cta-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+  flex-wrap: wrap;
+  background: var(--voltimo-primary-soft);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 16px 22px;
+  margin: 30px 0;
+}
+.poradna-cta-inline__text { font-weight: var(--fw-semibold); color: var(--voltimo-primary); font-size: 16.5px; }
+.poradna-cta-inline__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--voltimo-yellow);
+  color: var(--text-on-yellow);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  font-size: 15px;
+}
+.poradna-cta-inline__btn:hover { background: var(--voltimo-yellow-hover); }
+
 /* FAQ */
 .poradna-faq { margin: 34px 0 10px; }
 .poradna-faq h2 { font-size: 23px; color: var(--text-heading); margin: 0 0 6px; }

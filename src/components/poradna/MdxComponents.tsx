@@ -62,6 +62,52 @@ export function Postup({ children }: { children?: React.ReactNode }) {
   return <div className="poradna-steps">{children}</div>;
 }
 
+// Fotka v textu s popiskem.
+export function Foto({
+  src = "",
+  alt = "",
+  caption,
+}: {
+  src?: string;
+  alt?: string;
+  caption?: string;
+}) {
+  const url = src.startsWith("http") ? src : `${basePath}/photos/${src}`;
+  return (
+    <figure className="poradna-figure">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={url} alt={alt} loading="lazy" />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+  );
+}
+
+// Klíčová myšlenka / vytažená věta (pull-quote).
+export function Klic({ children }: { children?: React.ReactNode }) {
+  return <p className="poradna-key">{children}</p>;
+}
+
+// Kompaktní výzva k akci uprostřed článku.
+export function CtaInline({
+  heading = "",
+  label = "",
+  href = "",
+}: {
+  heading?: string;
+  label?: string;
+  href?: string;
+}) {
+  const url = href.startsWith("/") ? `${basePath}${href}` : href;
+  return (
+    <aside className="poradna-cta-inline">
+      <span className="poradna-cta-inline__text">{heading}</span>
+      <a className="poradna-cta-inline__btn" href={url}>
+        {label}
+      </a>
+    </aside>
+  );
+}
+
 export const mdxComponents = {
   h2: H2,
   h3: H3,
@@ -69,5 +115,8 @@ export const mdxComponents = {
   Praxe,
   Pozor,
   Postup,
+  Foto,
+  Klic,
+  CtaInline,
   CestaKvalifikace,
 };
