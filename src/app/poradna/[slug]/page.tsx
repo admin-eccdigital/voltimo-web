@@ -30,7 +30,8 @@ export async function generateMetadata({
   const a = getArticle(slug);
   const url = `${SITE_URL}/poradna/${slug}/`;
   return {
-    title: a.seoTitle ?? a.title,
+    // seoTitle už obsahuje „| Voltimo", tak obejdeme šablonu (jinak dvojitě).
+    title: a.seoTitle ? { absolute: a.seoTitle } : a.title,
     description: a.description,
     alternates: { canonical: url },
     openGraph: {
