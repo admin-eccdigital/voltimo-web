@@ -13,3 +13,4 @@ export { LpProof } from "./LpProof";
 export { LpEdge } from "./LpEdge";
 export { LpRegistration } from "./LpRegistration";
 export { LpFooter } from "./LpFooter";
+export { ElektrikarAbTest } from "./ElektrikarAbTest";
