@@ -114,12 +114,12 @@ function VideoCard({ v }: { v: (typeof VIDEOS)[number] }) {
 
 export function LpFearsProofB() {
   return (
-    <Section tone="light">
+    <Section tone="dark">
       <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head">
-          <Eyebrow>Bez obav</Eyebrow>
-          <Heading level={2}>Změna oboru vypadá velká. Ale nemusí být.</Heading>
+          <Eyebrow tone="ondark">Bez obav</Eyebrow>
+          <Heading level={2} ondark>Změna oboru vypadá velká. Ale nemusí být.</Heading>
         </div>
         <div className="lp-fears">
           {FEARS.map((f) => (
@@ -139,8 +139,8 @@ export function LpFearsProofB() {
 
         <div style={{ marginTop: "3rem" }}>
           <div className="lp-head lp-head--center">
-            <Eyebrow>Důkaz, ne sliby</Eyebrow>
-            <Heading level={3}>Čísla a lidé, co to mají za sebou.</Heading>
+            <Eyebrow tone="ondark">Důkaz, ne sliby</Eyebrow>
+            <Heading level={3} ondark>Čísla a lidé, co to mají za sebou.</Heading>
           </div>
 
           <div className="lp-proof-nums">

@@ -253,12 +253,21 @@
 .lp-fear__a strong { color: var(--voltimo-primary); font-weight: var(--fw-bold); }
 .lp-fear__tag { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; font-size: 13px; font-weight: var(--fw-bold); color: var(--voltimo-primary); }
 .lp-fear__tag svg { width: 16px; height: 16px; color: var(--voltimo-sky); }
+.vlt-section--dark .lp-fear { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
+.vlt-section--dark .lp-fear__q { color: #fff; }
+.vlt-section--dark .lp-fear__q-ic { background: rgba(255,255,255,0.15); color: var(--voltimo-yellow); }
+.vlt-section--dark .lp-fear__a { color: rgba(255,255,255,0.8); }
+.vlt-section--dark .lp-fear__a strong { color: var(--voltimo-yellow); }
+.vlt-section--dark .lp-fear__tag { color: var(--voltimo-yellow); }
+.vlt-section--dark .lp-fear__tag svg { color: var(--voltimo-yellow); }
 
 /* ============================ PROOF (videos + numbers) ============================ */
 .lp-proof-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
 .lp-num { text-align: center; }
 .lp-num strong { display: block; font-size: clamp(2.5rem, 1.6rem + 3vw, 3.5rem); font-weight: var(--fw-bold); color: var(--voltimo-primary); line-height: 1; }
 .lp-num small { display: block; margin-top: 8px; font-size: 14px; font-weight: var(--fw-semibold); color: var(--text-muted); }
+.vlt-section--dark .lp-num strong { color: var(--voltimo-yellow); }
+.vlt-section--dark .lp-num small { color: rgba(255,255,255,0.75); }
 .lp-videos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; }
 .lp-video { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-default); box-shadow: var(--shadow-sm); background: #fff; }
 .lp-video__thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; cursor: pointer; }

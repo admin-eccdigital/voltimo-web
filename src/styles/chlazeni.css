@@ -78,6 +78,7 @@
 .chl-gal__item{margin:0;display:flex;flex-direction:column;gap:12px}
 .chl-gal__item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);background:var(--surface-subtle)}
 .chl-gal__item figcaption{font-size:14px;line-height:1.45;color:var(--text-muted);font-weight:var(--fw-medium)}
+.vlt-section--dark .chl-gal__item figcaption{color:rgba(255,255,255,0.8)}
 @media (max-width:1000px){.chl-gal{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.chl-gal{grid-template-columns:1fr}.chl-gal__item img{aspect-ratio:3/2}}
 

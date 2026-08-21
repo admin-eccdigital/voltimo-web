@@ -8,8 +8,8 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const GALLERY = [
   { src: "05-rozvadec-praxe.jpg", alt: "Praktická práce na rozvaděči" },
   { src: "10-ucebna-bez-lidi.jpg", alt: "Učebna Voltimo v Přešticích" },
-  { src: "homepage/lektor-panel.jpg", alt: "Lektor s žákem u panelu" },
-  { src: "homepage/kurz-rozvadec.jpg", alt: "Výcvik na reálném rozvaděči" },
+  { src: "06-foto-landscape-doplnek.jpg", alt: "Teoretická příprava v učebně" },
+  { src: "o-nas/prace-panel.jpg", alt: "Účastník kurzu při zapojování" },
 ];
 
 export function LpHowTeacherB() {
