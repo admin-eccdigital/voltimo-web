@@ -25,8 +25,24 @@ export function useAbTest<V extends string>(config: AbTestConfig<V>): V | null {
 
   useEffect(() => {
     const storageKey = STORAGE_PREFIX + config.id;
-    const stored = localStorage.getItem(storageKey) as V | null;
     const validKeys = config.variants.map((v) => v.key);
+
+    const params = new URLSearchParams(window.location.search);
+    const forced = params.get("ab_variant") as V | null;
+    if (forced && validKeys.includes(forced)) {
+      setVariant(forced);
+      if (!pushed.current) {
+        pushed.current = true;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "ab_test_exposure",
+          ab_test: { test_id: config.id, variant: forced, forced: true },
+        });
+      }
+      return;
+    }
+
+    const stored = localStorage.getItem(storageKey) as V | null;
 
     let chosen: V;
     if (stored && validKeys.includes(stored)) {
@@ -43,10 +59,7 @@ export function useAbTest<V extends string>(config: AbTestConfig<V>): V | null {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "ab_test_exposure",
-        ab_test: {
-          test_id: config.id,
-          variant: chosen,
-        },
+        ab_test: { test_id: config.id, variant: chosen },
       });
     }
   }, [config.id, config.variants]);
