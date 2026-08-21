@@ -1,17 +1,22 @@
-import { Check, X, Briefcase, ClipboardCheck } from "lucide-react";
+import Image from "next/image";
+import { Check, ShieldCheck, Briefcase, ClipboardCheck } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "./FadeIn";
 
-const YES = [
-  "Chcete změnit obor a začít v elektrotechnice od nuly",
-  "Jste v evidenci úřadu práce a hledáte uplatnění",
-  "Pracujete manuálně a chcete lépe placenou práci s budoucností",
-  "Děláte údržbu, fotovoltaiku nebo hobby elektro a chcete to dělat oficiálně",
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+const WHY = [
+  "Elektrikářů je nedostatek — práce je hned",
+  "Průměrný výdělek 45 000 Kč měsíčně",
+  "Po roce praxe si můžete otevřít vlastní živnost",
+  "Školu ani předchozí praxi nepotřebujete",
 ];
 
-const NO = [
-  "Kdo chce dělat revizního technika — na to je potřeba škola",
-  "Kdo hledá čistě teoretický kurz na dálku",
+const GALLERY = [
+  { src: "05-rozvadec-praxe.jpg", alt: "Praktická práce na rozvaděči" },
+  { src: "10-ucebna-bez-lidi.jpg", alt: "Učebna Voltimo v Přešticích" },
+  { src: "homepage/lektor-panel.jpg", alt: "Lektor s žákem u panelu" },
+  { src: "homepage/kurz-rozvadec.jpg", alt: "Výcvik na reálném rozvaděči" },
 ];
 
 export function LpAudienceB() {
@@ -20,67 +25,57 @@ export function LpAudienceB() {
       <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head">
-          <Eyebrow>Pro koho je to ideální</Eyebrow>
-          <Heading level={2}>
-            Měníte obor? Přesně pro vás to děláme.
-          </Heading>
+          <Eyebrow>Proč zrovna elektro</Eyebrow>
+          <Heading level={2}>Obor s budoucností. A vy v něm za 10 dní.</Heading>
         </div>
+
         <div className="lp-aud">
           <div className="lp-aud__card">
             <h3 className="lp-aud__title">
-              <span className="lp-aud__mark lp-aud__mark--yes">
-                <Check />
-              </span>
-              Tohle je pro vás
+              <span className="lp-aud__mark lp-aud__mark--yes"><Briefcase /></span>
+              Proč to dává smysl
             </h3>
             <ul className="lp-aud__list lp-aud__list--yes">
-              {YES.map((t) => (
-                <li key={t}>
-                  <Check />
-                  <span>{t}</span>
-                </li>
+              {WHY.map((t) => (
+                <li key={t}><Check /><span>{t}</span></li>
               ))}
             </ul>
           </div>
-          <div className="lp-aud__card lp-aud__card--no">
+          <div className="lp-aud__card">
             <h3 className="lp-aud__title">
-              <span className="lp-aud__mark lp-aud__mark--no">
-                <X />
-              </span>
-              Tohle pro vás není
+              <span className="lp-aud__mark lp-aud__mark--yes"><ShieldCheck /></span>
+              Bez rizika
             </h3>
-            <ul className="lp-aud__list lp-aud__list--no">
-              {NO.map((t) => (
-                <li key={t}>
-                  <X />
-                  <span>{t}</span>
-                </li>
-              ))}
+            <ul className="lp-aud__list lp-aud__list--yes">
+              <li><Check /><span>Záruka prvního dne — vrátíme peníze</span></li>
+              <li><Check /><span>96 % účastníků projde zkouškou napoprvé</span></li>
+              <li><Check /><span>Začínáme od základů, zvládnete to</span></li>
             </ul>
           </div>
         </div>
 
         <div className="lp-aud__note">
-          <span className="lp-aud__note-ic">
-            <Briefcase />
-          </span>
+          <span className="lp-aud__note-ic"><ClipboardCheck /></span>
           <p>
-            <strong>Elektrotechnika je obor s budoucností.</strong>{" "}
-            Elektrikářů je nedostatek a poptávka roste. S osvědčením
-            máte jistotu práce i slušný výdělek — ať už jako zaměstnanec,
-            nebo na vlastní živnost.
+            <strong>Stačí vám 18 let a zdravotní způsobilost.</strong>{" "}
+            Výuční list ani praxe nejsou podmínkou.
           </p>
         </div>
 
-        <div className="lp-aud__note">
-          <span className="lp-aud__note-ic">
-            <ClipboardCheck />
-          </span>
-          <p>
-            <strong>Požadavky:</strong> je vám 18 let a doložíte zdravotní
-            způsobilost od lékaře. Předchozí vzdělání ani praxe v oboru
-            nejsou podmínkou — naučíme vás vše od základů.
-          </p>
+        <div className="chl-gal" style={{ marginTop: 32 }}>
+          {GALLERY.map((g) => (
+            <FadeIn key={g.src}>
+              <figure className="chl-gal__item">
+                <Image
+                  src={`${basePath}/photos/${g.src}`}
+                  alt={g.alt}
+                  width={800}
+                  height={600}
+                />
+                <figcaption>{g.alt}</figcaption>
+              </figure>
+            </FadeIn>
+          ))}
         </div>
       </div>
       </FadeIn>

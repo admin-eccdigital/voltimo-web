@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight, Briefcase } from "lucide-react";
 import { Button, YellowLabel, StatCircle } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
@@ -37,10 +37,9 @@ export function LpHeroB() {
 
         <HeroItem>
           <p className="lp-hero__lead">
-            Změňte obor za 10 dní. Žádné měsíce studia, žádné dojíždění do
-            školy. Praktický výcvik, státní zkouška a osvědčení, se kterým
-            můžete pracovat jako elektrikář nebo si otevřít živnost. Školu
-            ani praxi mít nemusíte.
+            Praktický výcvik, státní zkouška a osvědčení — bez školy, bez
+            měsíců studia. Po 10 dnech můžete pracovat jako elektrikář
+            nebo si otevřít živnost.
           </p>
         </HeroItem>
 

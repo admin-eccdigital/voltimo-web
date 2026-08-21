@@ -34,18 +34,32 @@ export function ElektrikarAbTest() {
     return <div style={{ minHeight: "100vh" }} />;
   }
 
-  const isB = variant === "rekvalifikace";
+  if (variant === "rekvalifikace") {
+    return (
+      <>
+        <LpHeroB />
+        <LpOutcome />
+        <LpAudienceB />
+        <LpTeacher />
+        <LpDates />
+        <LpPrice />
+        <LpFearsB />
+        <LpRegistration />
+        <LpSticky />
+      </>
+    );
+  }
 
   return (
     <>
-      {isB ? <LpHeroB /> : <LpHero />}
+      <LpHero />
       <LpOutcome />
-      {isB ? <LpAudienceB /> : <LpAudience />}
+      <LpAudience />
       <LpTeacher />
       <LpHow />
       <LpDates />
       <LpPrice />
-      {isB ? <LpFearsB /> : <LpFears />}
+      <LpFears />
       <LpProof />
       <LpEdge />
       <LpRegistration />

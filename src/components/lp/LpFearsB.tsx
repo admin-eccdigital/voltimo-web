@@ -14,10 +14,8 @@ const FEARS: Fear[] = [
     q: "Nikdy jsem elektro nedělal. Zvládnu to?",
     a: (
       <>
-        Ano. Kurz je postavený tak, aby ho zvládl člověk{" "}
-        <strong>bez předchozí zkušenosti</strong>. Začínáme od základů,
-        vše si prakticky osaháte. K elektro škole ani výučnímu listu
-        vás nepotřebujeme.
+        Kurz je pro lidi <strong>bez předchozí zkušenosti</strong>. Začínáme
+        od základů, vše si osaháte na reálných zařízeních.
       </>
     ),
     tag: "Začínáme od nuly",
@@ -26,20 +24,18 @@ const FEARS: Fear[] = [
     q: "Zvládnu za 10 dní to, co jiní studují roky?",
     a: (
       <>
-        Neučíme teorii pro teorii. Soustředíme se na to, co{" "}
-        <strong>reálně potřebujete v praxi</strong>. 10 dní intenzivního
-        výcviku nahradí měsíce klasického studia. 96 % účastníků projde
-        zkouškou napoprvé.
+        Učíme jen to, co <strong>reálně potřebujete v praxi</strong>. Žádná
+        zbytečná teorie. 96 % účastníků projde zkouškou napoprvé.
       </>
     ),
     tag: "96 % úspěšnost",
   },
   {
-    q: "Co když zjistím, že elektro není pro mě?",
+    q: "Co když zjistím, že to není pro mě?",
     a: (
       <>
-        Záruka prvního dne: když po prvním dni zjistíte, že to není pro vás,{" "}
-        <strong>vrátíme vám peníze</strong>. Žádné riziko, žádné závazky.
+        Záruka prvního dne — když to po prvním dni není pro vás,{" "}
+        <strong>vrátíme peníze</strong>.
       </>
     ),
     tag: "Záruka vrácení peněz",
@@ -59,9 +55,7 @@ export function LpFearsB() {
           {FEARS.map((f) => (
             <div className="lp-fear" key={f.q}>
               <h3 className="lp-fear__q">
-                <span className="lp-fear__q-ic">
-                  <HelpCircle />
-                </span>
+                <span className="lp-fear__q-ic"><HelpCircle /></span>
                 {f.q}
               </h3>
               <p className="lp-fear__a">{f.a}</p>
