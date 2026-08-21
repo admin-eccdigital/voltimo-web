@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
-import { ElektrikarAbTest } from "@/components/lp";
+import {
+  LpSticky,
+  LpHero,
+  LpOutcome,
+  LpAudience,
+  LpTeacher,
+  LpHow,
+  LpDates,
+  LpPrice,
+  LpFears,
+  LpProof,
+  LpEdge,
+  LpRegistration,
+} from "@/components/lp";
 import { JsonLd } from "@/components/site";
 import { SITE_URL, ORG } from "@/lib/site";
 
@@ -34,7 +47,18 @@ export default function ElektrikarPage() {
   return (
     <>
       <JsonLd data={courseLd} />
-      <ElektrikarAbTest />
+      <LpHero />
+      <LpOutcome />
+      <LpAudience />
+      <LpTeacher />
+      <LpHow />
+      <LpDates />
+      <LpPrice />
+      <LpFears />
+      <LpProof />
+      <LpEdge />
+      <LpRegistration />
+      <LpSticky />
     </>
   );
 }
