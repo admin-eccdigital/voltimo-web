@@ -16,8 +16,10 @@ import {
   LpRegistration,
 } from "@/components/lp";
 import { LpHeroB } from "./LpHeroB";
-import { LpAudienceB } from "./LpAudienceB";
-import { LpFearsB } from "./LpFearsB";
+import { LpOutcomeAudienceB } from "./LpOutcomeAudienceB";
+import { LpHowTeacherB } from "./LpHowTeacherB";
+import { LpDatesPriceB } from "./LpDatesPriceB";
+import { LpFearsProofB } from "./LpFearsProofB";
 
 const TEST: AbTestConfig<"control" | "rekvalifikace"> = {
   id: "elektrikar-rekval-2026-08",
@@ -38,12 +40,10 @@ export function ElektrikarAbTest() {
     return (
       <>
         <LpHeroB />
-        <LpOutcome />
-        <LpAudienceB />
-        <LpTeacher />
-        <LpDates />
-        <LpPrice />
-        <LpFearsB />
+        <LpOutcomeAudienceB />
+        <LpHowTeacherB />
+        <LpDatesPriceB />
+        <LpFearsProofB />
         <LpRegistration />
         <LpSticky />
       </>
