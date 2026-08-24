@@ -16,8 +16,7 @@ export const metadata: Metadata = {
 
 export default function PoradnaPage() {
   const articles = getAllArticles();
-  const featured = articles[0];
-  const rest = articles.slice(1);
+  const entries = PORADNA_ENTRIES.filter((e) => e.href);
 
   return (
     <>
@@ -32,62 +31,54 @@ export default function PoradnaPage() {
         </div>
       </section>
 
-      {featured && (
-        <section className="poradna-featured">
-          <a
-            className="poradna-featured__card"
-            href={`${basePath}/poradna/${featured.slug}/`}
-          >
-            {featured.hero && (
-              <div className="poradna-featured__img">
-                <Image
-                  src={`${basePath}/photos/${featured.hero}`}
-                  alt={featured.heroAlt ?? featured.title}
-                  width={760}
-                  height={520}
-                />
-              </div>
-            )}
-            <div className="poradna-featured__body">
-              <span className="poradna-featured__tag">Doporučený článek</span>
-              <h2>{featured.title}</h2>
-              <p>{featured.description}</p>
-              <span className="poradna-featured__go">
-                Číst článek <ArrowRight size={18} />
+      <section className="poradna-list">
+        <div className="poradna-list__grid">
+          {articles.map((a) => (
+            <a
+              className="poradna-listcard"
+              href={`${basePath}/poradna/${a.slug}/`}
+              key={a.slug}
+            >
+              {a.hero && (
+                <span className="poradna-listcard__img">
+                  <Image
+                    src={`${basePath}/photos/${a.hero}`}
+                    alt={a.heroAlt ?? a.title}
+                    width={640}
+                    height={360}
+                  />
+                </span>
+              )}
+              <span className="poradna-listcard__body">
+                <span className="poradna-listcard__cat">{a.category}</span>
+                <h2>{a.title}</h2>
+                <p>{a.description}</p>
+                <span className="poradna-listcard__go">
+                  Číst článek <ArrowRight size={17} />
+                </span>
               </span>
-            </div>
-          </a>
-        </section>
-      )}
-
-      <section className="poradna-entries">
-        <div className="poradna-entries__grid">
-          {PORADNA_ENTRIES.map((e) => (
-            <div className="poradna-entry" key={e.label}>
-              <strong>{e.label}</strong>
-              <span>{e.note}</span>
-            </div>
+            </a>
           ))}
         </div>
       </section>
 
-      {rest.length > 0 && (
-        <section className="poradna-list">
-          <div className="poradna-list__grid">
-            {rest.map((a) => (
+      <section className="poradna-entries">
+        <div className="poradna-entries__grid">
+          <p className="poradna-entries__cap">Co potřebujete řešit?</p>
+          <div className="poradna-entries__row">
+            {entries.map((e) => (
               <a
-                className="poradna-listcard"
-                href={`${basePath}/poradna/${a.slug}/`}
-                key={a.slug}
+                className="poradna-entry"
+                href={`${basePath}${e.href}`}
+                key={e.label}
               >
-                <span className="poradna-listcard__cat">{a.category}</span>
-                <h3>{a.title}</h3>
-                <p>{a.description}</p>
+                <strong>{e.label}</strong>
+                <span>{e.note}</span>
               </a>
             ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
     </>
   );
 }

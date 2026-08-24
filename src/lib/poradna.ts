@@ -25,6 +25,7 @@ export interface PoradnaMeta {
   answer: string;
   readingMinutes: number;
   updated: string;
+  published: string;
   hero?: string;
   heroAlt?: string;
   cta: PoradnaCta;
@@ -84,6 +85,7 @@ export function getArticle(slug: string): PoradnaArticle {
     answer: meta.answer ?? "",
     readingMinutes: meta.readingMinutes ?? Math.max(1, Math.round(rt.minutes)),
     updated: meta.updated ?? "2026",
+    published: meta.published ?? "",
     hero: meta.hero,
     heroAlt: meta.heroAlt,
     cta: meta.cta as PoradnaCta,
@@ -94,17 +96,43 @@ export function getArticle(slug: string): PoradnaArticle {
   };
 }
 
+// Nejnovější nahoře. Bez data řadíme podle názvu, ať je pořadí stabilní.
 export function getAllArticles(): PoradnaArticle[] {
   return getSlugs()
     .map(getArticle)
-    .sort((a, b) => a.title.localeCompare(b.title, "cs"));
+    .sort((a, b) =>
+      a.published && b.published
+        ? b.published.localeCompare(a.published)
+        : a.title.localeCompare(b.title, "cs"),
+    );
 }
 
 // Tematické vstupy na hlavní stránce poradny (dle koncepce).
-export const PORADNA_ENTRIES: readonly { label: string; note: string }[] = [
-  { label: "Chci se stát elektrikářem", note: "Cesta ke kvalifikaci od nuly i s praxí" },
-  { label: "Potřebuji § 6 / § 7", note: "Odborná způsobilost podle NV 194/2022 Sb." },
-  { label: "Rekvalifikace přes ÚP", note: "Kdo na ni má nárok a jak postupovat" },
+// Bez `href` se dlaždice nezobrazí — nenabízíme klik, který nikam nevede.
+export const PORADNA_ENTRIES: readonly {
+  label: string;
+  note: string;
+  href?: string;
+}[] = [
+  {
+    label: "Chci se stát elektrikářem",
+    note: "Cesta ke kvalifikaci od nuly i s praxí",
+    href: "/poradna/jak-se-stat-elektrikarem-bez-skoly/",
+  },
+  {
+    label: "Potřebuji § 6",
+    note: "Odborná způsobilost podle NV 194/2022 Sb.",
+    href: "/poradna/jak-ziskat-paragraf-6/",
+  },
+  {
+    label: "Rekvalifikace přes ÚP",
+    note: "Kdo na ni má nárok a jak postupovat",
+    href: "/rekvalifikace/",
+  },
   { label: "Elektro z praxe", note: "Rozvaděče, jističe, chrániče, měření" },
-  { label: "Chlazení a F-plyny", note: "Kvalifikace, zkoušky a servisní praxe" },
+  {
+    label: "Chlazení a F-plyny",
+    note: "Kvalifikace, zkoušky a servisní praxe",
+    href: "/chlazeni/",
+  },
 ];
