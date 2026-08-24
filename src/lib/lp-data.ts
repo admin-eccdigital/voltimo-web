@@ -16,22 +16,13 @@ export const LP_DATA = {
   },
   dates: [
     {
-      d: "24",
-      m: "SRP",
-      title: "Srpnový běh",
-      range: "Příprava 24. – 28. 8. · zkoušky 31. 8. – 4. 9. 2026",
-      cap: "Poslední 2 místa",
-      capLevel: "low" as "low" | "ok",
-      featured: true,
-    },
-    {
       d: "21",
       m: "ZÁŘ",
       title: "Zářijový běh",
       range: "Příprava 21. – 25. 9. · zkoušky 28. 9. – 2. 10. 2026",
       cap: "Zbývají 3 místa",
       capLevel: "low" as "low" | "ok",
-      featured: false,
+      featured: true,
     },
     {
       d: "12",
