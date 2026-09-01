@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck,
-  BadgePercent, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
+  BadgePercent, Flame, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
@@ -82,8 +82,9 @@ const FAQ = [
 ] as const;
 
 const CHL_DATES = [
-  { d: "7", m: "ZÁŘ", title: "Zářijový běh", range: "Příprava 7. – 8. 9. · zkoušky 9. – 10. 9. 2026", cap: "Poslední 3 místa", low: true, featured: true },
-  { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Zbývá 5 míst", low: false, featured: false },
+  { d: "7", m: "ZÁŘ", title: "Zářijový běh", range: "Příprava 7. – 8. 9. · zkoušky 9. – 10. 9. 2026", cap: "", capLevel: "ok", featured: true },
+  { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Poslední 2 místa", capLevel: "low", featured: false },
+  { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "", capLevel: "ok", featured: false },
 ] as const;
 
 const courseLd = {
@@ -123,6 +124,23 @@ const courseLd = {
       courseMode: "onsite",
       startDate: "2026-10-06",
       endDate: "2026-10-09",
+      location: {
+        "@type": "Place",
+        name: ORG.legalName,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: ORG.street,
+          addressLocality: ORG.city,
+          postalCode: ORG.zip,
+          addressCountry: ORG.country,
+        },
+      },
+    },
+    {
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      startDate: "2026-11-30",
+      endDate: "2026-12-03",
       location: {
         "@type": "Place",
         name: ORG.legalName,
@@ -529,6 +547,12 @@ export default function ChlazeniPage() {
                   <strong>{t.title}</strong>
                   <span>{t.range}</span>
                 </div>
+                {t.cap && (
+                  <span className={`lp-date__cap lp-date__cap--${t.capLevel}`}>
+                    {t.capLevel === "low" ? <Flame /> : <Users />}
+                    {t.cap}
+                  </span>
+                )}
                 <Button
                   variant={t.featured ? "cta" : "outline"}
                   icon={<ArrowRight />}

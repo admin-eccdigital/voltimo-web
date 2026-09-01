@@ -217,6 +217,7 @@
 .lp-date__cap svg { width: 15px; height: 15px; }
 .lp-date__cap--low { color: #C0392B; }
 .lp-date__cap--ok { color: var(--voltimo-sky); }
+.lp-date__cap--full { color: var(--text-muted); }
 
 /* ============================ PRICE ============================ */
 .lp-price { display: flex; justify-content: center; margin-top: 40px; }
