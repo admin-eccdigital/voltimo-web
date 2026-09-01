@@ -82,8 +82,8 @@ const FAQ = [
 ] as const;
 
 const CHL_DATES = [
-  { d: "7", m: "ZÁŘ", title: "Zářijový běh", range: "Příprava 7. – 8. 9. · zkoušky 9. – 10. 9. 2026", cap: "", capLevel: "ok", featured: true },
-  { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Poslední 2 místa", capLevel: "low", featured: false },
+  { d: "7", m: "ZÁŘ", title: "Zářijový běh", range: "Příprava 7. – 8. 9. · zkoušky 9. – 10. 9. 2026", cap: "Poslední 2 místa", capLevel: "low", featured: true },
+  { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
   { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "", capLevel: "ok", featured: false },
 ] as const;
 
