@@ -32,7 +32,7 @@ export function LpPrice() {
             <div className="lp-price__head">
               <span className="lp-price__variant">10denní kurz Elektrikář</span>
               <span className="lp-price__disc">
-                Prázdninová sleva 20 % · platí pouze do {price.deadline}
+                Sleva 20 % pro říjnový a listopadový běh
               </span>
             </div>
             <div className="lp-price__amounts">
@@ -45,8 +45,8 @@ export function LpPrice() {
             </div>
             <p className="lp-price__save">
               <PiggyBank />
-              Ušetříte {price.discount.toLocaleString("cs-CZ")} Kč při
-              registraci do {price.deadline}
+              Ušetříte {price.discount.toLocaleString("cs-CZ")} Kč na
+              říjnovém a listopadovém běhu
             </p>
             <ul className="lp-price__incl">
               {INCLUDES.map((item) => (

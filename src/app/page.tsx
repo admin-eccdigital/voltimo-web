@@ -173,7 +173,7 @@ export default function HomePage() {
                   čerpadla.
                 </p>
                 <span className="hp-pick__price">
-                  od 20 000 Kč <small>sleva 20 %</small>
+                  od 25 000 Kč
                 </span>
                 <span className="hp-pick__go">
                   Chci dělat chlazení <ArrowRight size={17} />

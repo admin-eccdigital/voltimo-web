@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck,
-  BadgePercent, Flame, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
+  Flame, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
@@ -25,8 +25,6 @@ export const metadata: Metadata = {
 };
 
 const PRICE_FULL = "25 000 Kč";
-const PRICE_SALE = "20 000 Kč";
-const SALE_UNTIL = "31. 8. 2026";
 
 const GALLERY = [
   { src: "chl-manifold-testo.jpg", cap: "Měření tlaků digitálním manifoldem" },
@@ -188,12 +186,6 @@ export default function ChlazeniPage() {
             <Button variant="outline" size="lg" className="chl-btn-ondark" href="#kurz">
               Podrobnosti kurzu
             </Button>
-          </div>
-
-          <div className="lp-urgency">
-            <span className="lp-urgency__dot" />
-            <span>Prázdninová sleva 20 %</span>
-            <span className="lp-urgency__chip">{PRICE_SALE} při přihlášení do {SALE_UNTIL}</span>
           </div>
 
           <div className="chl-nopraxe">
@@ -574,7 +566,7 @@ export default function ChlazeniPage() {
               <Eyebrow>Cena balíčku</Eyebrow>
               <Heading level={2}>Jedna cena za obě kvalifikace.</Heading>
               <p className="lp-head__sub">
-                Prázdninová sleva 20 % při přihlášení do {SALE_UNTIL}. Platí do naplnění kapacity.
+                Příprava, obě zkoušky i osvědčení v jedné ceně. Termíny vypisujeme průběžně, kapacita je omezená.
               </p>
             </div>
           </FadeIn>
@@ -582,10 +574,9 @@ export default function ChlazeniPage() {
             <div className="chl-pricecard">
               <div className="chl-pricecard__top">
                 <div>
-                  <span className="chl-pricecard__kicker">Cena balíčku se slevou 20 %</span>
+                  <span className="chl-pricecard__kicker">Cena balíčku</span>
                   <span className="chl-pricecard__prices">
-                    <span className="chl-pricecard__val">{PRICE_SALE}</span>
-                    <span className="chl-pricecard__old">{PRICE_FULL}</span>
+                    <span className="chl-pricecard__val">{PRICE_FULL}</span>
                   </span>
                 </div>
                 <span className="chl-pricecard__note">Příprava i obě zkoušky. Bez skrytých položek.</span>
@@ -601,12 +592,6 @@ export default function ChlazeniPage() {
                     <li key={t}><span className="lp-check"><Check size={15} /></span>{t}</li>
                   ))}
                 </ul>
-              </div>
-              <div className="chl-sale-strip">
-                <BadgePercent size={24} />
-                <span>
-                  Prázdninová sleva 20 % při přihlášení <strong>do {SALE_UNTIL}</strong> · ušetříte 5 000 Kč
-                </span>
               </div>
               <div className="chl-pricecard__foot">
                 <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">

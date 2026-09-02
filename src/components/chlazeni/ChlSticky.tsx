@@ -8,7 +8,7 @@ export function ChlSticky() {
     <div className="lp-sticky">
       <div className="lp-sticky__txt">
         <strong>Dvě kvalifikace NSK za 4 dny</strong>
-        <span>20 000 Kč se slevou 20 % · do 31. 8. 2026</span>
+        <span>25 000 Kč · příprava i obě zkoušky</span>
       </div>
       <Button variant="cta" icon={<ArrowRight />} href="#poptavka">
         Poptat termín
