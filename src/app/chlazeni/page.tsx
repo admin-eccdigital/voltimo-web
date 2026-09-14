@@ -79,11 +79,14 @@ const FAQ = [
   { q: "A co F-plyny?", a: "Pro samostatnou práci s chladivy potřebujete kromě profesní kvalifikace i certifikát na F-plyny. Autorizaci na F-plyny očekáváme během září 2026. Kdo u nás absolvuje kurz chlazení teď, dostane F-plyny se slevou." },
 ] as const;
 
-const CHL_DATES = [
-  { d: "7", m: "ZÁŘ", title: "Zářijový běh", range: "Příprava 7. – 8. 9. · zkoušky 9. – 10. 9. 2026", cap: "Poslední 2 místa", capLevel: "low", featured: true },
+const CHL_DATES: readonly {
+  d: string; m: string; title: string; range: string;
+  cap: string; capLevel: "low" | "ok" | "full"; featured: boolean;
+}[] = [
   { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
-  { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "", capLevel: "ok", featured: false },
-] as const;
+  { d: "2", m: "LIS", title: "Listopadový běh", range: "Příprava 2. – 3. 11. · zkoušky 4. – 5. 11. 2026", cap: "", capLevel: "ok", featured: true },
+  { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
+];
 
 const courseLd = {
   "@context": "https://schema.org",
@@ -103,8 +106,8 @@ const courseLd = {
     {
       "@type": "CourseInstance",
       courseMode: "onsite",
-      startDate: "2026-09-07",
-      endDate: "2026-09-10",
+      startDate: "2026-11-02",
+      endDate: "2026-11-05",
       location: {
         "@type": "Place",
         name: ORG.legalName,
