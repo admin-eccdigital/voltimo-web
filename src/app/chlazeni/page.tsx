@@ -76,7 +76,7 @@ const FAQ = [
   { q: "Co když zkoušku neudělám napoprvé?", a: "Můžete ji opakovat. Naše příprava ale stojí přesně na tom, abyste prošli napoprvé." },
   { q: "Kde to probíhá?", a: "V Přešticích, v naší učebně a praktických dílnách. Prezenčně. Na řemeslo si musíte sáhnout." },
   { q: "Co potřebuji s sebou?", a: "Platný občanský průkaz a lékařské potvrzení o zdravotní způsobilosti (formulář pošleme po přihlášce). Pracovní oblečení a obuv." },
-  { q: "A co F-plyny?", a: "Pro samostatnou práci s chladivy potřebujete kromě profesní kvalifikace i certifikát na F-plyny. Autorizaci na F-plyny očekáváme během září 2026. Kdo u nás absolvuje kurz chlazení teď, dostane F-plyny se slevou." },
+  { q: "A co F-plyny?", a: "Pro samostatnou práci s chladivy potřebujete kromě profesní kvalifikace i certifikát na F-plyny. Autorizaci na F-plyny teprve dokončujeme, čekáme na vydání povolení. Kdo u nás absolvuje kurz chlazení teď, dostane F-plyny se slevou." },
 ] as const;
 
 const CHL_DATES: readonly {
@@ -86,6 +86,8 @@ const CHL_DATES: readonly {
   { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
   { d: "2", m: "LIS", title: "Listopadový běh", range: "Příprava 2. – 3. 11. · zkoušky 4. – 5. 11. 2026", cap: "", capLevel: "ok", featured: true },
   { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
+  { d: "11", m: "LED", title: "Lednový běh 2027", range: "Příprava 11. – 12. 1. · zkoušky 13. – 14. 1. 2027", cap: "", capLevel: "ok", featured: false },
+  { d: "8", m: "ÚNO", title: "Únorový běh 2027", range: "Příprava 8. – 9. 2. · zkoušky 10. – 11. 2. 2027", cap: "", capLevel: "ok", featured: false },
 ];
 
 const courseLd = {
@@ -142,6 +144,40 @@ const courseLd = {
       courseMode: "onsite",
       startDate: "2026-11-30",
       endDate: "2026-12-03",
+      location: {
+        "@type": "Place",
+        name: ORG.legalName,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: ORG.street,
+          addressLocality: ORG.city,
+          postalCode: ORG.zip,
+          addressCountry: ORG.country,
+        },
+      },
+    },
+    {
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      startDate: "2027-01-11",
+      endDate: "2027-01-14",
+      location: {
+        "@type": "Place",
+        name: ORG.legalName,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: ORG.street,
+          addressLocality: ORG.city,
+          postalCode: ORG.zip,
+          addressCountry: ORG.country,
+        },
+      },
+    },
+    {
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      startDate: "2027-02-08",
+      endDate: "2027-02-11",
       location: {
         "@type": "Place",
         name: ORG.legalName,
@@ -439,8 +475,8 @@ export default function ChlazeniPage() {
               <p className="chl-note chl-note--fplyn">
                 <strong>F-plyny brzy u nás.</strong> Pro samostatnou práci s
                 chladivy je potřeba i certifikát na F-plyny. Autorizaci
-                očekáváme během září 2026. Kdo u nás absolvuje chlazení teď,
-                dostane F-plyny se slevou.
+                teprve dokončujeme, čekáme na vydání povolení. Kdo u nás
+                absolvuje chlazení teď, dostane F-plyny se slevou.
               </p>
               <div style={{ marginTop: 22 }}>
                 <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">
