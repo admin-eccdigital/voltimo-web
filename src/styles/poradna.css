@@ -351,6 +351,59 @@
 .poradna-flow__body small { color: var(--text-muted); font-size: 13px; }
 .poradna-flow__arrow { display: none; }
 
+/* Srovnání dvou cest vedle sebe */
+.poradna-flow-compare { display: grid; gap: 16px; margin: 28px 0; }
+@media (min-width: 720px) {
+  .poradna-flow-compare { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.poradna-flow-compare .poradna-flow { margin: 0; }
+.poradna-flow--muted { opacity: 0.8; }
+.poradna-flow--hl {
+  border: 2px solid var(--voltimo-primary);
+  background: var(--surface-card);
+}
+.poradna-flow--hl .poradna-flow__cap { color: var(--voltimo-primary); }
+
+/* Srovnání § 6 a § 7 */
+.poradna-p67 { margin: 28px 0; }
+.poradna-p67__cols { display: grid; gap: 12px; }
+@media (min-width: 620px) {
+  .poradna-p67__cols { grid-template-columns: 1fr 1fr; }
+}
+.poradna-p67__card {
+  display: flex; flex-direction: column; gap: 6px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+}
+.poradna-p67__card--hl {
+  border: 2px solid var(--voltimo-primary);
+  background: var(--surface-card);
+}
+.poradna-p67__tag {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;
+  font-weight: var(--fw-semibold); color: var(--text-muted);
+}
+.poradna-p67__card--hl .poradna-p67__tag { color: var(--voltimo-primary); }
+.poradna-p67__card strong { color: var(--text-heading); font-size: 17px; }
+.poradna-p67__card small { color: var(--text-muted); font-size: 13.5px; line-height: 1.45; }
+.poradna-p67__shared {
+  margin-top: 12px; padding: 14px 18px;
+  background: var(--voltimo-primary); border-radius: var(--radius-lg);
+}
+.poradna-p67__shared-cap {
+  display: block; font-size: 12px; text-transform: uppercase;
+  letter-spacing: 0.06em; font-weight: var(--fw-semibold);
+  color: var(--voltimo-yellow); margin-bottom: 6px;
+}
+.poradna-p67__steps {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 2px 0;
+  color: #fff; font-weight: var(--fw-semibold); font-size: 14.5px;
+}
+.poradna-p67__steps li { display: inline; }
+
 /* CTA v článku */
 .poradna-cta {
   background: linear-gradient(135deg, var(--voltimo-primary), var(--voltimo-primary-hover));

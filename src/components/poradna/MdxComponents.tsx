@@ -1,6 +1,11 @@
 import React from "react";
 import { slugifyHeading } from "@/lib/poradna";
-import { CestaKvalifikace, CestaKParagrafu6 } from "./CestaInfografika";
+import {
+  CestaKvalifikace,
+  CestaKParagrafu6,
+  CestaSrovnani,
+  Paragraf67,
+} from "./CestaInfografika";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -130,4 +135,6 @@ export const mdxComponents = {
   CtaInline,
   CestaKvalifikace,
   CestaKParagrafu6,
+  CestaSrovnani,
+  Paragraf67,
 };
