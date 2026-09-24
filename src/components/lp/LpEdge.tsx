@@ -36,10 +36,10 @@ export function LpEdge() {
               <CheckCheck />
             </span>
             <div>
-              <h3>Jen příprava</h3>
+              <h3>Jen zkoušky</h3>
               <p>
-                Fakt to umíte? Přijďte si na přípravu, kolik potřebujete. I tak
-                vám ale sedne spíš celý výcvik.
+                Fakt to umíte? Přijďte rovnou ke zkouškám, bez přípravy. I tak
+                ale většině lidí sedne spíš celý výcvik.
               </p>
               <span className="lp-variant__tag">Pro zkušené z oboru</span>
             </div>
