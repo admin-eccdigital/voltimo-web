@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, PiggyBank, Check } from "lucide-react";
+import { ArrowRight, PiggyBank, Check, Clock } from "lucide-react";
 import { Section, Eyebrow, Heading, Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
@@ -21,7 +21,7 @@ export function LpPrice() {
       <div className="lp-wrap">
         <div className="lp-head lp-head--center">
           <Eyebrow>Cena kurzu</Eyebrow>
-          <Heading level={2}>Jedna cena. Teď s prázdninovou slevou 20 %.</Heading>
+          <Heading level={2}>Jedna cena. Teď se slevou 20 %.</Heading>
           <p className="lp-head__sub">
             Kompletní 10denní výcvik včetně všech 5 zkoušek a §6. Žádné skryté
             poplatky.
@@ -48,6 +48,14 @@ export function LpPrice() {
               Ušetříte {price.discount.toLocaleString("cs-CZ")} Kč na
               říjnovém a listopadovém běhu
             </p>
+            <div className="lp-pricehike">
+              <Clock />
+              <span>
+                <strong>Ceny jsou bez DPH.</strong> Od 1. 1. 2027 k nim přidáme
+                21 % DPH. Pro plátce DPH se nic nemění, ostatní zaplatí o 21 %
+                víc.
+              </span>
+            </div>
             <ul className="lp-price__incl">
               {INCLUDES.map((item) => (
                 <li key={item}>

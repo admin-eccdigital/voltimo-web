@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
-  ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck,
+  ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck, Clock,
   Flame, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
@@ -631,6 +631,14 @@ export default function ChlazeniPage() {
                     <li key={t}><span className="lp-check"><Check size={15} /></span>{t}</li>
                   ))}
                 </ul>
+              </div>
+              <div className="lp-pricehike">
+                <Clock />
+                <span>
+                  <strong>Ceny jsou bez DPH.</strong> Od 1. 1. 2027 k nim
+                  přidáme 21 % DPH. Pro plátce DPH se nic nemění, ostatní
+                  zaplatí o 21 % víc.
+                </span>
               </div>
               <div className="chl-pricecard__foot">
                 <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">

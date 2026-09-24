@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, CalendarClock, Bell, PiggyBank, Check } from "lucide-react";
+import { ArrowRight, CalendarClock, Bell, PiggyBank, Check, Clock } from "lucide-react";
 import { Section, Eyebrow, Heading, Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
@@ -99,6 +99,14 @@ export function LpDatesPriceB() {
               Ušetříte {price.discount.toLocaleString("cs-CZ")} Kč na
               říjnovém a listopadovém běhu
             </p>
+            <div className="lp-pricehike">
+              <Clock />
+              <span>
+                <strong>Ceny jsou bez DPH.</strong> Od 1. 1. 2027 k nim přidáme
+                21 % DPH. Pro plátce DPH se nic nemění, ostatní zaplatí o 21 %
+                víc.
+              </span>
+            </div>
             <ul className="lp-price__incl">
               {INCLUDES.map((item) => (
                 <li key={item}>
