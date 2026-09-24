@@ -635,9 +635,8 @@ export default function ChlazeniPage() {
               <div className="lp-pricehike">
                 <Clock />
                 <span>
-                  <strong>Ceny jsou bez DPH.</strong> Od 1. 1. 2027 k nim
-                  přidáme 21 % DPH. Pro plátce DPH se nic nemění, ostatní
-                  zaplatí o 21 % víc.
+                  Tato cena platí pro běhy do konce roku 2026.{" "}
+                  <strong>Od 1. 1. 2027 se zvyšuje na 26 620 Kč.</strong>
                 </span>
               </div>
               <div className="chl-pricecard__foot">
