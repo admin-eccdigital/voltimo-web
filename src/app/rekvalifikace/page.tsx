@@ -78,8 +78,9 @@ export default function RekvalifikacePage() {
 
           <p className="lp-hero__lead">
             Rekvalifikační kurz Montér elektrických instalací (26-017-H). 120 hodin
-            prezenčně v Přešticích, zakončeno zkouškou a osvědčením. Pro nezaměstnané
-            i zájemce o změnu oboru. Kurz hradí úřad práce.
+            prezenčně v Přešticích, zakončeno zkouškou a osvědčením. Kurz hradí úřad
+            práce. Získáte jednu z pěti kvalifikací elektrikáře, na kompletního
+            elektrikáře doporučujeme rovnou celou kvalifikaci.
           </p>
 
           <div className="lp-hero__cta">
@@ -171,9 +172,23 @@ export default function RekvalifikacePage() {
             se dodělává samostatně a ten už úřad práce nehradí.
           </p>
           <p className="chl-note" style={{ marginTop: 18 }}>
-            Chcete rovnou kompletního elektrikáře?{" "}
-            <a href={`${basePath}/elektrikar-za-10-dni/`}>Kurz Elektrikář za 10 dní</a>.
+            Když chcete dělat elektrikařinu naplno, většině lidí doporučujeme rovnou
+            celou kvalifikaci, ne jen jednu zkoušku. Přes rekvalifikaci uděláte jeden
+            dílek a zbylé čtyři si stejně doděláváte. Rozdíl obou cest jsme rozebrali
+            v článku{" "}
+            <a href={`${basePath}/poradna/rekvalifikace-vs-profesni-kvalifikace-elektrikar/`}>
+              Rekvalifikace, nebo profesní kvalifikace?
+            </a>
           </p>
+          <div style={{ marginTop: 18 }}>
+            <Button
+              variant="cta"
+              icon={<ArrowRight />}
+              href={`${basePath}/elektrikar-za-10-dni/#registrace`}
+            >
+              Chci celou kvalifikaci Elektrikář
+            </Button>
+          </div>
         </div>
       </section>
 
