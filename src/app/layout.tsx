@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     images: [OG_IMAGE],
   },
   robots: NOINDEX ? { index: false, follow: false } : undefined,
+  verification: {
+    google: "lbkmPWdAdQqgGWzQg9Xt-gWqNkVXefRk0NoPgmCsGa8",
+  },
 };
 
 const organizationLd = {
