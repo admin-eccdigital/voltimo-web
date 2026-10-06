@@ -74,7 +74,7 @@ const FAQ = [
   { q: "Jak rychle začnu po přihlášení?", a: "Termíny vypisujeme průběžně. Po poptávce vás kontaktujeme a domluvíme nejbližší vhodný termín." },
   { q: "Jaký je rozdíl mezi kvalifikací 23-054-H a 23-055-H?", a: "Malá (23-054-H) se ověřuje na systémech do 3 kg chladiva, u hermetických okruhů do 6 kg. Velká (23-055-H) pracuje nad těmito hranicemi a navíc s vícekompresorovými sdruženými jednotkami a jejich řízením. U nás připravujeme na obě." },
   { q: "Potřebuju na chlazení živnost a jak ji získám?", a: "Montáž a servis chlazení je řemeslná živnost, takže musíte doložit odbornou způsobilost. Profesní kvalifikace z NSK je jedna z přímých cest. První ohlášení živnosti stojí 1 000 Kč a zápis bývá do 5 pracovních dnů." },
-  { q: "Co když nemám elektro vzdělání?", a: "Pro samostatnou práci na elektrických částech zařízení budete potřebovat i odbornou způsobilost §6. To u nás také zařídíme, ale je to samostatný kurz." },
+  { q: "Co když nemám elektro vzdělání?", a: "Na samotnou živnost v chlazení elektro způsobilost nepotřebujete, tu doložíte chlaďařskou kvalifikací. §6 budete potřebovat až pro samostatnou práci na elektrických částech zařízení. To u nás také zařídíme, je to ale samostatný kurz." },
   { q: "Co když zkoušku neudělám napoprvé?", a: "Můžete ji opakovat. Naše příprava ale stojí přesně na tom, abyste prošli napoprvé." },
   { q: "Kde to probíhá?", a: "V Přešticích, v naší učebně a praktických dílnách. Prezenčně. Na řemeslo si musíte sáhnout." },
   { q: "Co potřebuji s sebou?", a: "Platný občanský průkaz a lékařské potvrzení o zdravotní způsobilosti (formulář pošleme po přihlášce). Pracovní oblečení a obuv." },
@@ -452,8 +452,8 @@ export default function ChlazeniPage() {
                 </li>
               </ul>
               <p className="chl-note">
-                Nemáte elektro vzdělání a budete k živnosti potřebovat i odbornou způsobilost §6?
-                Zajistíme i to,{" "}
+                Budete pracovat i na elektrických částech zařízení a potřebujete odbornou způsobilost §6?
+                Na živnost v chlazení ji sice nepotřebujete, ale zajistíme i to,{" "}
                 <a href={`${basePath}/elektrikar-za-10-dni/`}>elektro u nás děláme také</a>.
               </p>
               <p className="chl-note chl-note--fplyn">
