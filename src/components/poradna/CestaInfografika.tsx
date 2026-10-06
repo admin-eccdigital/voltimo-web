@@ -141,3 +141,85 @@ export function Paragraf67() {
     </figure>
   );
 }
+
+// Cesta "Jak se stát chlaďařem".
+const CESTA_CHLADAR: readonly Step[] = [
+  { n: "1", t: "Vyberu směr", d: "Chlazení, klimatizace, nebo tepelná čerpadla" },
+  { n: "2", t: "Praktická příprava", d: "Na reálných zařízeních ve Voltimo" },
+  { n: "3", t: "Profesní kvalifikace", d: "23-054-H a/nebo 23-055-H" },
+  { n: "4", t: "Zkouška u autorizované osoby", d: "Voltimo je autorizovaná osoba" },
+  { n: "5", t: "Praxe", d: "Zažité postupy na reálných zakázkách" },
+  { n: "6", t: "Doplním způsobilosti", d: "Elektro (§ 6) a certifikace na chladiva" },
+];
+
+export function CestaChladar() {
+  return <Cesta label="Jak se stát chlaďařem" steps={CESTA_CHLADAR} variant="hl" />;
+}
+
+// Cesta k živnosti na chlazení bez chlaďařské školy.
+const CESTA_ZIVNOST_CHLAZENI: readonly Step[] = [
+  { n: "1", t: "Kurz Voltimo", d: "Příprava na malá i velká zařízení" },
+  { n: "2", t: "Zkoušky 23-054-H + 23-055-H", d: "U autorizované osoby" },
+  { n: "3", t: "Osvědčení NSK", d: "Doklad o profesní kvalifikaci" },
+  { n: "4", t: "Doložení způsobilosti", d: "Na živnostenském úřadu" },
+  { n: "5", t: "Ohlášení řemeslné živnosti", d: "Montáž, opravy a rekonstrukce" },
+  { n: "6", t: "Vlastní podnikání", d: "Fakturujete na sebe" },
+];
+
+export function CestaZivnostChlazeni() {
+  return (
+    <Cesta
+      label="Cesta k živnosti bez chlaďařské školy"
+      steps={CESTA_ZIVNOST_CHLAZENI}
+      variant="hl"
+    />
+  );
+}
+
+// Srovnání malé a velké chlaďařské PK + společný základ dole.
+const CHLADAR_ZAKLAD = [
+  "Chladicí okruh",
+  "Diagnostika",
+  "Úniky",
+  "Instalace",
+  "Chladiva",
+  "Bezpečnost",
+];
+
+export function ChladarMalaVelka() {
+  return (
+    <figure className="poradna-p67" aria-label="Srovnání malé a velké chlaďařské kvalifikace">
+      <div className="poradna-p67__cols">
+        <div className="poradna-p67__card">
+          <span className="poradna-p67__tag">23-054-H · malá</span>
+          <strong>Do 3 kg chladiva</strong>
+          <small>
+            Hermetické okruhy do 6 kg. Menší klimatizace, chladicí systémy a
+            tepelná čerpadla.
+          </small>
+        </div>
+        <div className="poradna-p67__card poradna-p67__card--hl">
+          <span className="poradna-p67__tag">23-055-H · velká</span>
+          <strong>Nad 3 kg chladiva</strong>
+          <small>
+            Hermetické okruhy nad 6 kg. Vícekompresorové sdružené jednotky,
+            komerční a průmyslové chlazení.
+          </small>
+        </div>
+      </div>
+      <div className="poradna-p67__shared">
+        <span className="poradna-p67__shared-cap">Společný základ</span>
+        <ol className="poradna-p67__steps">
+          {CHLADAR_ZAKLAD.map((s, i) => (
+            <li key={s}>
+              {s}
+              {i < CHLADAR_ZAKLAD.length - 1 && (
+                <span aria-hidden="true"> → </span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </figure>
+  );
+}
