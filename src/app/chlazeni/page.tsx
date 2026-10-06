@@ -83,9 +83,8 @@ const CHL_DATES: readonly {
   d: string; m: string; title: string; range: string;
   cap: string; capLevel: "low" | "ok" | "full"; featured: boolean;
 }[] = [
-  { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
-  { d: "2", m: "LIS", title: "Listopadový běh", range: "Příprava 2. – 3. 11. · zkoušky 4. – 5. 11. 2026", cap: "", capLevel: "ok", featured: true },
-  { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "Poslední místo", capLevel: "low", featured: false },
+  { d: "2", m: "LIS", title: "Listopadový běh", range: "Příprava 2. – 3. 11. · zkoušky 4. – 5. 11. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
+  { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "Poslední místo", capLevel: "low", featured: true },
   { d: "11", m: "LED", title: "Lednový běh 2027", range: "Příprava 11. – 12. 1. · zkoušky 13. – 14. 1. 2027", cap: "", capLevel: "ok", featured: false },
   { d: "8", m: "ÚNO", title: "Únorový běh 2027", range: "Příprava 8. – 9. 2. · zkoušky 10. – 11. 2. 2027", cap: "", capLevel: "ok", featured: false },
 ];
@@ -110,23 +109,6 @@ const courseLd = {
       courseMode: "onsite",
       startDate: "2026-11-02",
       endDate: "2026-11-05",
-      location: {
-        "@type": "Place",
-        name: ORG.legalName,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: ORG.street,
-          addressLocality: ORG.city,
-          postalCode: ORG.zip,
-          addressCountry: ORG.country,
-        },
-      },
-    },
-    {
-      "@type": "CourseInstance",
-      courseMode: "onsite",
-      startDate: "2026-10-06",
-      endDate: "2026-10-09",
       location: {
         "@type": "Place",
         name: ORG.legalName,
