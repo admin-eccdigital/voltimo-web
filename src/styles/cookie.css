@@ -8,6 +8,9 @@
   display: flex;
   justify-content: center;
   padding: 16px;
+  /* Na mobilu (hlavně Facebook/Instagram in-app prohlížeč) nesmí tlačítka
+     končit pod spodní lištou prohlížeče ani home indikátorem. */
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   pointer-events: none;
 }
 .cookie-bar__inner {
@@ -15,6 +18,7 @@
   width: 100%;
   max-width: 1000px;
   max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   overflow-y: auto;
   padding: 18px 22px;
   background: var(--voltimo-primary);
@@ -146,6 +150,11 @@
   .cookie-bar__head {
     flex-direction: column;
     align-items: stretch;
+  }
+  /* Ve sloupci by z flex-basis 320px byla VÝŠKA textu → obří prázdná mezera
+     a tlačítka zatlačená mimo obrazovku. Text má hýbat podle obsahu. */
+  .cookie-bar__text {
+    flex: 0 1 auto;
   }
   .cookie-bar__actions {
     flex-wrap: wrap;
