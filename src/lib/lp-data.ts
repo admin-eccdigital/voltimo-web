@@ -20,9 +20,9 @@ export const LP_DATA = {
       m: "ŘÍJ",
       title: "Říjnový běh",
       range: "Příprava 12. – 16. 10. · zkoušky 19. – 23. 10. 2026",
-      cap: "",
-      capLevel: "ok" as "low" | "ok" | "full",
-      featured: true,
+      cap: "Plná kapacita",
+      capLevel: "full" as "low" | "ok" | "full",
+      featured: false,
     },
     {
       d: "9",
@@ -31,7 +31,7 @@ export const LP_DATA = {
       range: "Příprava 9. – 13. 11. · zkoušky 16. – 20. 11. 2026",
       cap: "",
       capLevel: "ok" as "low" | "ok" | "full",
-      featured: false,
+      featured: true,
     },
     {
       d: "4",
