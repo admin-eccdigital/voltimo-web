@@ -602,7 +602,7 @@ export default function ChlazeniPage() {
                     <span className="chl-pricecard__val">{PRICE_FULL}</span>
                   </span>
                 </div>
-                <span className="chl-pricecard__note">Příprava i obě zkoušky. Bez skrytých položek.</span>
+                <span className="chl-pricecard__note">Příprava i obě zkoušky. Bez skrytých položek. Ceny jsou konečné, včetně DPH.</span>
               </div>
               <div className="chl-pricecard__body">
                 <ul className="chl-pricecard__list">

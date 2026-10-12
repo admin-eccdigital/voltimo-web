@@ -99,6 +99,7 @@ export function LpDatesPriceB() {
               Ušetříte {price.discount.toLocaleString("cs-CZ")} Kč na
               říjnovém a listopadovém běhu
             </p>
+            <p className="lp-price__fine">Ceny jsou konečné, včetně DPH.</p>
             <div className="lp-pricehike">
               <Clock />
               <span>
