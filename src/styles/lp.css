@@ -292,6 +292,10 @@
 .lp-video__cap strong { display: block; font-size: var(--fs-h4); font-weight: var(--fw-bold); color: var(--text-heading); }
 .lp-video__cap span { display: block; font-size: 14px; color: var(--text-muted); margin-top: 3px; }
 .lp-video__cap p { margin: 12px 0 0; font-size: 15px; line-height: 1.55; color: var(--text-body); }
+/* Jedna video recenze na výšku (chlazení) */
+.lp-videos--single { display: flex; justify-content: center; }
+.lp-video--portrait { width: 100%; max-width: 340px; }
+.lp-video__thumb--portrait { aspect-ratio: 9 / 16; }
 
 /* ============================ EDGE VARIANTS ============================ */
 .lp-variants { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }

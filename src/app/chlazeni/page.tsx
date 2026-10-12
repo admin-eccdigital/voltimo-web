@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { ChlVideoProof } from "@/components/lp/ChlVideoProof";
 import { ChlForm } from "@/components/chlazeni/ChlForm";
 import { ChlSticky } from "@/components/chlazeni/ChlSticky";
 import { JsonLd } from "@/components/site";
@@ -642,6 +643,9 @@ export default function ChlazeniPage() {
               <Eyebrow>Reference absolventů</Eyebrow>
               <Heading level={2}>Co o kurzu říkají naši studenti.</Heading>
             </div>
+          </FadeIn>
+          <FadeIn>
+            <ChlVideoProof />
           </FadeIn>
           <div className="chl-revs">
             {REVS.map((r) => (
