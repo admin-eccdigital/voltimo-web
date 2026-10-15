@@ -14,7 +14,7 @@ function pickTerm(title: string) {
 const INCLUDES = [
   "40 hodin praktického výcviku v dílně",
   "Všech 5 profesních kvalifikací",
-  "Zkouška §6 a státní osvědčení",
+  "Státní osvědčení o úplné kvalifikaci",
   "Záruka prvního dne: vrácení peněz",
 ];
 
@@ -88,7 +88,7 @@ export function LpDatesPriceB() {
                 {price.current.toLocaleString("cs-CZ")} Kč
               </span>
             </div>
-            <p className="lp-price__fine">Cena je konečná, včetně DPH. Pro plátce DPH 40 000 Kč bez DPH.</p>
+            <p className="lp-price__fine">40 000 Kč bez DPH</p>
             <ul className="lp-price__incl">
               {INCLUDES.map((item) => (
                 <li key={item}>

@@ -9,7 +9,7 @@ import { FadeIn } from "./FadeIn";
 const INCLUDES = [
   "40 hodin praktického výcviku v dílně",
   "Všech 5 profesních kvalifikací",
-  "Zkouška §6 a státní osvědčení",
+  "Státní osvědčení o úplné kvalifikaci",
   "Záruka prvního dne: vrácení peněz",
 ];
 
@@ -23,8 +23,8 @@ export function LpPrice() {
           <Eyebrow>Cena kurzu</Eyebrow>
           <Heading level={2}>Jedna cena. Bez skrytých poplatků.</Heading>
           <p className="lp-head__sub">
-            Kompletní 10denní výcvik včetně všech 5 zkoušek a §6. Žádné skryté
-            poplatky.
+            Kompletní 10denní výcvik včetně všech 5 zkoušek profesních
+            kvalifikací. Žádné skryté poplatky.
           </p>
         </div>
         <div className="lp-price">
@@ -37,7 +37,7 @@ export function LpPrice() {
                 {price.current.toLocaleString("cs-CZ")} Kč
               </span>
             </div>
-            <p className="lp-price__fine">Cena je konečná, včetně DPH. Pro plátce DPH 40 000 Kč bez DPH.</p>
+            <p className="lp-price__fine">40 000 Kč bez DPH</p>
             <ul className="lp-price__incl">
               {INCLUDES.map((item) => (
                 <li key={item}>

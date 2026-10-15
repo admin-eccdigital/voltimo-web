@@ -601,9 +601,10 @@ export default function ChlazeniPage() {
                   <span className="chl-pricecard__kicker">Cena balíčku</span>
                   <span className="chl-pricecard__prices">
                     <span className="chl-pricecard__val">{PRICE_FULL}</span>
+                    <span style={{ display: "block", fontSize: 14, fontWeight: 600, color: "var(--text-muted)", marginTop: 4 }}>22 000 Kč bez DPH</span>
                   </span>
                 </div>
-                <span className="chl-pricecard__note">Příprava i obě zkoušky. Bez skrytých položek. Cena včetně DPH, pro plátce DPH 22 000 Kč bez DPH.</span>
+                <span className="chl-pricecard__note">Příprava i obě zkoušky. Bez skrytých položek.</span>
               </div>
               <div className="chl-pricecard__body">
                 <ul className="chl-pricecard__list">
