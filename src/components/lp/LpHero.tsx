@@ -61,9 +61,9 @@ export function LpHero() {
         <HeroItem>
           <div className="lp-urgency">
             <span className="lp-urgency__dot" />
-            <span>Sleva 20 %</span>
+            <span>Poslední 2 místa</span>
             <span className="lp-urgency__chip">
-              pro říjnový a listopadový běh
+              na listopadový běh
             </span>
           </div>
         </HeroItem>

@@ -157,7 +157,7 @@ export default function HomePage() {
                   mít nemusíte.
                 </p>
                 <span className="hp-pick__price">
-                  od 40 000 Kč <small>sleva 20 %</small>
+                  od 48 400 Kč
                 </span>
                 <span className="hp-pick__go">
                   Chci být elektrikář <ArrowRight size={17} />
@@ -173,7 +173,7 @@ export default function HomePage() {
                   čerpadla.
                 </p>
                 <span className="hp-pick__price">
-                  od 25 000 Kč
+                  od 26 620 Kč
                 </span>
                 <span className="hp-pick__go">
                   Chci dělat chlazení <ArrowRight size={17} />

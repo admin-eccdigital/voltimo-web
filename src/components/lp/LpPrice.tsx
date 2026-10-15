@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, PiggyBank, Check, Clock } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Section, Eyebrow, Heading, Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
@@ -21,7 +21,7 @@ export function LpPrice() {
       <div className="lp-wrap">
         <div className="lp-head lp-head--center">
           <Eyebrow>Cena kurzu</Eyebrow>
-          <Heading level={2}>Jedna cena. Teď se slevou 20 %.</Heading>
+          <Heading level={2}>Jedna cena. Bez skrytých poplatků.</Heading>
           <p className="lp-head__sub">
             Kompletní 10denní výcvik včetně všech 5 zkoušek a §6. Žádné skryté
             poplatky.
@@ -31,31 +31,13 @@ export function LpPrice() {
           <div className="lp-price__card">
             <div className="lp-price__head">
               <span className="lp-price__variant">10denní kurz Elektrikář</span>
-              <span className="lp-price__disc">
-                Sleva 20 % pro říjnový a listopadový běh
-              </span>
             </div>
             <div className="lp-price__amounts">
-              <span className="lp-price__old">
-                {price.regular.toLocaleString("cs-CZ")} Kč
-              </span>
               <span className="lp-price__now">
                 {price.current.toLocaleString("cs-CZ")} Kč
               </span>
             </div>
-            <p className="lp-price__save">
-              <PiggyBank />
-              Ušetříte {price.discount.toLocaleString("cs-CZ")} Kč na
-              říjnovém a listopadovém běhu
-            </p>
-            <p className="lp-price__fine">Ceny jsou konečné, včetně DPH.</p>
-            <div className="lp-pricehike">
-              <Clock />
-              <span>
-                Tato cena platí pro běhy do konce roku 2026.{" "}
-                <strong>Od 1. 1. 2027 se zvyšuje na 48 400 Kč.</strong>
-              </span>
-            </div>
+            <p className="lp-price__fine">Cena je konečná, včetně DPH. Pro plátce DPH 40 000 Kč bez DPH.</p>
             <ul className="lp-price__incl">
               {INCLUDES.map((item) => (
                 <li key={item}>

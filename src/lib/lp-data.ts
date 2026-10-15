@@ -4,9 +4,9 @@ export const LP_DATA = {
   email: "info@voltimo.cz",
   address: "Přeštice, Plzeňsko",
   price: {
-    regular: 50_000,
-    current: 40_000,
-    discount: 10_000,
+    regular: 48_400,
+    current: 48_400,
+    discount: 0,
     deadline: "31. 8. 2026",
   },
   stats: {
@@ -29,8 +29,8 @@ export const LP_DATA = {
       m: "LIS",
       title: "Listopadový běh",
       range: "Příprava 9. – 13. 11. · zkoušky 16. – 20. 11. 2026",
-      cap: "",
-      capLevel: "ok" as "low" | "ok" | "full",
+      cap: "Poslední 2 místa",
+      capLevel: "low" as "low" | "ok" | "full",
       featured: true,
     },
     {
