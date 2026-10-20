@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   Snowflake, Gift, ArrowRight, CalendarClock, GraduationCap, ClipboardCheck, Wrench,
+  Hammer, TrendingUp, Check,
 } from "lucide-react";
 import { Section, Eyebrow, Heading, Button, YellowLabel, StatCircle } from "@/components/brand";
-import { FadeIn } from "@/components/lp/FadeIn";
+import { FadeIn, HeroStagger, HeroItem } from "@/components/lp/FadeIn";
 import { VnVideos } from "@/components/lp/VnVideos";
 import { LP_DATA } from "@/lib/lp-data";
 
@@ -23,14 +24,32 @@ const CHL_2027 = [
   { title: "Únorový běh 2027", range: "Zkoušky 10. – 11. 2. 2027" },
 ];
 
-const PATH = [
+const PERSONAS = [
   {
     ic: GraduationCap,
+    t: "Nedodělal jsi školu",
+    d: "Učňák nebo střední jsi nedotáhl? Na řemeslo to stačí. Papír doženeš zkouškou, ne diplomem.",
+  },
+  {
+    ic: Hammer,
+    t: "Děláš řemeslo, papír nemáš",
+    d: "Montér, údržbář, servisák, člověk od fotovoltaiky nebo klimatizací? Co roky umíš rukama, si konečně necháš uznat.",
+  },
+  {
+    ic: TrendingUp,
+    t: "Přemýšlíš o změně oboru",
+    d: "Chceš dělat něco, co tě uživí a jen tak nenahradí? Elektro a chlazení je sázka na jistotu.",
+  },
+];
+
+const PATH = [
+  {
+    ic: ClipboardCheck,
     t: "Stačí ti základka",
     d: "Ke zkoušce potřebuješ základní vzdělání, 18 let a zdraví. Výuční list ani maturitu ne.",
   },
   {
-    ic: ClipboardCheck,
+    ic: Check,
     t: "Papír doženeš zkouškou",
     d: "Řemeslo dnes dokládá zkouška, ne diplom. Příprava je krátká a praktická, bez návratu do lavic.",
   },
@@ -59,53 +78,92 @@ export default function VanocePage() {
   return (
     <>
       {/* HERO */}
-      <section className="vn-hero">
+      <section className="lp-hero">
         <div
-          className="vn-hero__media"
-          style={{
-            backgroundImage: `linear-gradient(165deg, rgba(10,23,51,0.80) 0%, rgba(10,19,40,0.9) 70%), url('${basePath}/photos/poradna/vyuka-skupina-panel.jpg')`,
-          }}
-          aria-hidden="true"
+          className="lp-hero__media"
+          style={{ backgroundImage: `url(${basePath}/photos/poradna/vyuka-skupina-panel.jpg)` }}
         />
-        <div className="vn-hero__snow" aria-hidden="true" />
-        <div className="lp-wrap vn-hero__inner">
-          <span className="vn-eyebrow">
-            <Snowflake size={16} /> Vánoce ve Voltimu
-          </span>
-          <h1 className="vn-hero__title">
-            <YellowLabel lines={["Nedodělal jsi školu?", "Řemeslo tím nekončí."]} size="md" />
-          </h1>
-          <p className="vn-hero__lead">
-            Elektrikáře i chlaďaře dnes uděláš přes zkoušku, ne přes diplom. Stačí
-            základka, 18 let a chuť makat rukama. Řemeslo, které tě uživí a jde dělat
-            i na sebe. Letos máme plno, na jarní běhy 2027 ale místo ještě je.
-          </p>
-          <div className="vn-hero__cta">
-            <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
-              Vybrat kurz na 2027
-            </Button>
-            <Button variant="outline" size="lg" className="chl-btn-ondark" href="#darek">
-              Darovat kurz
-            </Button>
-          </div>
-          <div className="vn-hero__stats">
-            <StatCircle value="2026" label="vyprodáno" variant="yellow" />
-            <StatCircle value={LP_DATA.stats.graduates} label="absolventů" variant="blue" />
-            <StatCircle value={LP_DATA.stats.successRate} label="u zkoušky" variant="outline" />
-          </div>
-        </div>
+        <div className="lp-hero__overlay" />
+        <HeroStagger className="lp-hero__inner">
+          <HeroItem>
+            <span className="lp-hero__eyebrow">
+              <Snowflake /> Vánoce ve Voltimu · termíny 2027
+            </span>
+          </HeroItem>
+          <HeroItem>
+            <h1 className="lp-hero__tabs">
+              <YellowLabel lines={["Umíš dělat rukama?", "Dožeň si papír."]} size="lg" />
+            </h1>
+          </HeroItem>
+          <HeroItem>
+            <p className="lp-hero__claim">Elektrikář i chlaďař přes zkoušku, ne přes školu.</p>
+          </HeroItem>
+          <HeroItem>
+            <p className="lp-hero__lead">
+              Děláš řemeslo z praxe a chybí ti papír? Nedodělal jsi školu? Nebo
+              přemýšlíš o změně oboru? Kvalifikaci elektrikáře i chlaďaře dnes uděláš
+              přes zkoušku, ne přes diplom. Letos máme plno, na jarní běhy 2027 ale
+              místo ještě je.
+            </p>
+          </HeroItem>
+          <HeroItem>
+            <div className="lp-hero__cta">
+              <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
+                Vybrat kurz na 2027
+              </Button>
+              <span className="lp-hero__note">
+                Nebo <strong>darujte kurz pod stromeček</strong>
+              </span>
+            </div>
+          </HeroItem>
+          <HeroItem>
+            <div className="lp-urgency">
+              <span className="lp-urgency__dot" />
+              <span>Letos plno</span>
+              <span className="lp-urgency__chip">nejbližší termín leden 2027</span>
+            </div>
+          </HeroItem>
+          <HeroItem>
+            <div className="lp-hero__trust">
+              <StatCircle value="2026" label="vyprodáno" variant="yellow" />
+              <StatCircle value={LP_DATA.stats.graduates} label="absolventů" variant="blue" />
+              <StatCircle value={LP_DATA.stats.successRate} label="úspěšnost u zkoušky" variant="outline" />
+            </div>
+          </HeroItem>
+        </HeroStagger>
       </section>
 
-      {/* NEDODĚLAL JSI ŠKOLU */}
+      {/* PRO KOHO TO JE */}
       <Section tone="light">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
-              <Eyebrow>Nedodělal jsi školu?</Eyebrow>
-              <Heading level={2}>Není to konec. Je to nový začátek.</Heading>
+              <Eyebrow>Pro koho to je</Eyebrow>
+              <Heading level={2}>Ať jsi kdokoli z nich, papír tu dohoníš.</Heading>
+            </div>
+            <div className="vn-why">
+              {PERSONAS.map((w) => (
+                <div className="vn-why__card" key={w.t}>
+                  <span className="vn-why__ic"><w.ic size={20} /></span>
+                  <strong>{w.t}</strong>
+                  <p>{w.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* JAK TO FUNGUJE */}
+      <Section tone="subtle">
+        <FadeIn>
+          <div className="lp-wrap">
+            <div className="lp-head lp-head--center">
+              <Eyebrow>Jak to funguje</Eyebrow>
+              <Heading level={2}>Jak se k papíru dostaneš.</Heading>
               <p className="lp-head__sub">
-                Spousta lidí si myslí, že bez výučního listu nemají v řemesle šanci.
-                Dávno to neplatí. Takhle se k papíru dostaneš.
+                Žádné roky ve škole. Cílená příprava a zkouška podle Národní soustavy
+                kvalifikací. Stejná cesta, ať začínáš od nuly, nebo roky děláš z praxe.
               </p>
             </div>
             <div className="vn-why">
@@ -118,7 +176,7 @@ export default function VanocePage() {
               ))}
             </div>
             <p className="vn-note">
-              Celé to rozebíráme v článku{" "}
+              Víc v článku{" "}
               <a href={`${basePath}/poradna/nedodelal-jsem-skolu-muzu-delat-elektrikare/`}>
                 Nedodělal jsem školu. Můžu dělat elektrikáře nebo chlaďaře?
               </a>
@@ -128,7 +186,7 @@ export default function VanocePage() {
       </Section>
 
       {/* KURZY 2027 */}
-      <Section tone="subtle" id="kurzy">
+      <Section tone="light" id="kurzy">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
@@ -162,6 +220,9 @@ export default function VanocePage() {
                 <Button variant="cta" block icon={<ArrowRight />} href={`${basePath}/elektrikar-za-10-dni/#registrace`}>
                   Zamluvit místo
                 </Button>
+                <a className="vn-course__more" href={`${basePath}/elektrikar-za-10-dni/`}>
+                  Více o kurzu <ArrowRight size={14} />
+                </a>
               </div>
 
               {/* CHLAZENÍ */}
@@ -186,6 +247,9 @@ export default function VanocePage() {
                 <Button variant="cta" block icon={<ArrowRight />} href={`${basePath}/chlazeni/#poptavka`}>
                   Zamluvit místo
                 </Button>
+                <a className="vn-course__more" href={`${basePath}/chlazeni/`}>
+                  Více o kurzu <ArrowRight size={14} />
+                </a>
               </div>
             </div>
           </div>
@@ -193,7 +257,7 @@ export default function VanocePage() {
       </Section>
 
       {/* VIDEORECENZE */}
-      <Section tone="light">
+      <Section tone="subtle">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
@@ -206,7 +270,7 @@ export default function VanocePage() {
       </Section>
 
       {/* ABSOLVENTI */}
-      <Section tone="subtle">
+      <Section tone="light">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
@@ -229,7 +293,7 @@ export default function VanocePage() {
       </Section>
 
       {/* DÁREK */}
-      <Section tone="light" id="darek">
+      <Section tone="subtle" id="darek">
         <FadeIn>
           <div className="lp-wrap">
             <div className="vn-gift">
@@ -255,7 +319,7 @@ export default function VanocePage() {
       </Section>
 
       {/* ROZCESTNÍK */}
-      <Section tone="subtle">
+      <Section tone="light">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">

@@ -138,6 +138,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* VÁNOČNÍ BANNER */}
+      <a className="hp-vanoce" href={`${basePath}/vanoce/`}>
+        <span className="hp-vanoce__tag">Vánoce</span>
+        <span className="hp-vanoce__txt">
+          Letos máme plno. Podívejte se na termíny 2027 a dárkové poukazy.
+        </span>
+        <span className="hp-vanoce__go">
+          Zjistit víc <ArrowRight size={16} />
+        </span>
+      </a>
+
       {/* VYBERTE SI OBOR */}
       <section className="hp-choose" id="kurzy">
         <div className="hp-choose__inner">

@@ -10,6 +10,25 @@
   color: #fff;
   padding: clamp(56px, 9vw, 110px) 0 clamp(48px, 7vw, 92px);
 }
+/* Vánoční banner na homepage */
+.hp-vanoce {
+  display: flex; align-items: center; justify-content: center; gap: 14px 18px;
+  flex-wrap: wrap; text-decoration: none;
+  background: var(--voltimo-primary); color: #fff;
+  padding: 15px 22px;
+}
+.hp-vanoce__tag {
+  background: var(--voltimo-yellow); color: var(--voltimo-primary);
+  font-size: 12px; font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 4px 11px; border-radius: var(--radius-full);
+}
+.hp-vanoce__txt { font-size: 15px; font-weight: var(--fw-semibold); }
+.hp-vanoce__go {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--voltimo-yellow); font-weight: var(--fw-semibold); font-size: 15px;
+}
+.hp-vanoce:hover .hp-vanoce__go { text-decoration: underline; }
+
 /* fotka za gradientem */
 .vn-hero__media {
   position: absolute; inset: 0; z-index: 0;
@@ -103,6 +122,8 @@
 .vn-course__dates li { display: flex; align-items: flex-start; gap: 9px; color: var(--text-body); font-size: 15px; }
 .vn-course__dates svg { color: var(--voltimo-primary); flex: none; margin-top: 2px; }
 .vn-course .vlt-btn { margin-top: auto; }
+.vn-course__more { display: inline-flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; color: var(--voltimo-primary); font-weight: var(--fw-semibold); font-size: 14px; text-decoration: none; }
+.vn-course__more:hover { text-decoration: underline; }
 .vn-note { margin: 26px 0 0; text-align: center; color: var(--text-muted); font-size: 14.5px; line-height: 1.5; }
 .vn-note a { color: var(--voltimo-primary); font-weight: var(--fw-semibold); text-decoration: underline; }
 
