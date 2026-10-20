@@ -142,7 +142,7 @@ export default function HomePage() {
       <a className="hp-vanoce" href={`${basePath}/vanoce/`}>
         <span className="hp-vanoce__tag">Vánoce</span>
         <span className="hp-vanoce__txt">
-          Letos máme plno. Podívejte se na termíny 2027 a dárkové poukazy.
+          Letos máme plno. Zápis na jarní běhy 2027 a dárkové poukazy do 24. 12.
         </span>
         <span className="hp-vanoce__go">
           Zjistit víc <ArrowRight size={16} />

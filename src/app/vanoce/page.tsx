@@ -87,7 +87,7 @@ export default function VanocePage() {
         <HeroStagger className="lp-hero__inner">
           <HeroItem>
             <span className="lp-hero__eyebrow">
-              <Snowflake /> Vánoce ve Voltimu · termíny 2027
+              <Snowflake /> Vánoční zápis · registrace do 24. 12.
             </span>
           </HeroItem>
           <HeroItem>
@@ -111,9 +111,9 @@ export default function VanocePage() {
               <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
                 Vybrat kurz na 2027
               </Button>
-              <span className="lp-hero__note">
-                Nebo <strong>darujte kurz pod stromeček</strong>
-              </span>
+              <Button variant="outline" size="lg" className="chl-btn-ondark" icon={<Gift />} href="#darek">
+                Darovat kurz pod stromeček
+              </Button>
             </div>
           </HeroItem>
           <HeroItem>
@@ -298,13 +298,14 @@ export default function VanocePage() {
           <div className="lp-wrap">
             <div className="vn-gift">
               <div className="vn-gift__body">
-                <span className="vn-gift__tag"><Gift size={16} /> Dárkový poukaz</span>
+                <span className="vn-gift__tag"><Gift size={16} /> Dárkový poukaz · do 24. 12.</span>
                 <Heading level={2}>Darujte dětem řemeslo do života.</Heading>
                 <p>
                   Dítě nedodělalo školu a neví, kam dál? Nebo chce konečně dělat
                   rukama a mít papír? Darujte mu kurz elektrikáře nebo chlazení.
                   Poukaz rozbalí u stromečku, na kurz nastoupí na jaře a má v ruce
-                  řemeslo, které ho uživí.
+                  řemeslo, které ho uživí. Napište si o něj do 24. 12., ať je pod
+                  stromečkem včas.
                 </p>
                 <Button variant="cta" icon={<ArrowRight />} href={`${basePath}/kontakt/`}>
                   Chci dárkový poukaz
@@ -343,7 +344,7 @@ export default function VanocePage() {
       <Section tone="dark">
         <div className="lp-wrap vn-final">
           <Heading level={2}>Nový rok, nová kvalifikace.</Heading>
-          <p>Letos je plno. Jaro 2027 je na dosah. Zamluvte si místo, než ho vezme někdo jiný.</p>
+          <p>Letos je plno. Jaro 2027 je na dosah. Registrujte se do 24. 12. a místo je vaše.</p>
           <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
             Vybrat kurz na 2027
           </Button>
