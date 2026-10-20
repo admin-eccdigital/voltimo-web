@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Voltimo — Středisko profesního vzdělávání",
     short_name: "Voltimo",
     description:
-      "Výcvik, zkouška §6 a státní osvědčení Elektrikář za 10 dní.",
+      "Výcvik, zkoušky a státní osvědčení Elektrikář za 10 dní.",
     lang: "cs",
     start_url: `${BASE_PATH}/`,
     display: "standalone",

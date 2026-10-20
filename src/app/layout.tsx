@@ -30,7 +30,7 @@ const sourceSans = localFont({
 const OG_IMAGE = `${BASE_PATH}/og/og-default.png`;
 const TITLE = "Voltimo — Výcvik elektrikářů";
 const DESCRIPTION =
-  "Středisko profesního vzdělávání v elektrotechnice. Výcvik, zkouška §6 a státní osvědčení Elektrikář za 10 dní.";
+  "Středisko profesního vzdělávání v elektrotechnice. Výcvik, zkoušky a státní osvědčení Elektrikář za 10 dní.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
