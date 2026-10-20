@@ -36,7 +36,7 @@ export function LpHero() {
         <HeroItem>
           <p className="lp-hero__lead">
             Úplná kvalifikace za 10 dní. Žádné měsíce u videí. Jen praxe,
-            zkouška §6 a státní osvědčení. Školu mít nemusíte, stačí ruce a
+            zkoušky a státní osvědčení. Školu mít nemusíte, stačí ruce a
             chuť.
           </p>
         </HeroItem>

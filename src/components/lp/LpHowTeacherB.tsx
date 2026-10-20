@@ -52,7 +52,7 @@ export function LpHowTeacherB() {
             </div>
             <p className="lp-week__p">
               5 dní zkoušek z 5 profesních kvalifikací před autorizovanou
-              osobou. Zakončeno §6.
+              osobou.
             </p>
           </div>
         </div>

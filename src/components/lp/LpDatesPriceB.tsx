@@ -97,6 +97,7 @@ export function LpDatesPriceB() {
                 </li>
               ))}
             </ul>
+            <p className="lp-price__fine">§6 (odborná způsobilost) lze dokoupit navíc.</p>
             <Button
               variant="cta"
               size="lg"

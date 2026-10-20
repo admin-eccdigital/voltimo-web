@@ -153,7 +153,7 @@ export default function HomePage() {
                 <span className="hp-pick__kicker">Kompletní kvalifikace</span>
                 <h3 className="hp-pick__title">Elektrikář za 10 dní</h3>
                 <p className="hp-pick__desc">
-                  5 profesních kvalifikací, zkouška §6 a státní osvědčení. Školu
+                  5 profesních kvalifikací a státní osvědčení. Školu
                   mít nemusíte.
                 </p>
                 <span className="hp-pick__price">

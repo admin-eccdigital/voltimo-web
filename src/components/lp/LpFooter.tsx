@@ -53,7 +53,7 @@ export function LpFooter() {
             <LpLogo inverse height={40} />
             <p>
               Středisko profesního vzdělávání v elektrotechnice. Výcvik, ne
-              škola. Praxe, zkouška §6 a státní osvědčení Elektrikář.
+              škola. Praxe, zkoušky a státní osvědčení Elektrikář.
             </p>
           </div>
           <Button

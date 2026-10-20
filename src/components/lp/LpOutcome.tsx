@@ -21,9 +21,9 @@ export function LpOutcome() {
               <Eyebrow>Co budete mít na konci</Eyebrow>
               <Heading level={2}>Státní osvědčení Elektrikář.</Heading>
               <p className="lp-head__sub">
-                Skládáte úplnou profesní kvalifikaci Elektrikář, 5 profesních
-                kvalifikací zakončených zkouškou §6. Odborná způsobilost dle NV
-                194/2022 Sb.
+                Skládáte úplnou profesní kvalifikaci Elektrikář, tedy 5
+                profesních kvalifikací a státní osvědčení. K samostatné práci
+                lze navíc dokoupit §6 (odborná způsobilost dle NV 194/2022 Sb.).
               </p>
             </div>
             <ul className="lp-outcome__list">
@@ -34,8 +34,8 @@ export function LpOutcome() {
               </li>
               <li>
                 <span className="lp-check"><Check /></span>
-                §6 – odborná způsobilost pro samostatnou práci na elektrickém
-                zařízení.
+                §6 – odbornou způsobilost pro samostatnou práci lze dokoupit
+                navíc.
               </li>
               <li>
                 <span className="lp-check"><Check /></span>
@@ -50,7 +50,7 @@ export function LpOutcome() {
             <span className="lp-cert__kicker">Úplná profesní kvalifikace</span>
             <h3 className="lp-cert__title">Elektrikář</h3>
             <p className="lp-cert__meta">
-              5 profesních kvalifikací · zkouška §6 · NV 194/2022 Sb.
+              5 profesních kvalifikací · úplná kvalifikace · NV 194/2022 Sb.
             </p>
             <ul className="lp-cert__pks">
               {PKS.map((p) => (
@@ -65,8 +65,8 @@ export function LpOutcome() {
                 <Award />
               </span>
               <span>
-                Zkouška §6
-                <small>Odborná způsobilost</small>
+                Úplná kvalifikace
+                <small>5 profesních kvalifikací</small>
               </span>
             </div>
           </div>
