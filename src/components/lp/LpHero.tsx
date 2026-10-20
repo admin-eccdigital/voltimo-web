@@ -61,9 +61,9 @@ export function LpHero() {
         <HeroItem>
           <div className="lp-urgency">
             <span className="lp-urgency__dot" />
-            <span>Poslední 2 místa</span>
+            <span>Letos plno</span>
             <span className="lp-urgency__chip">
-              na listopadový běh
+              nejbližší termín leden 2027
             </span>
           </div>
         </HeroItem>

@@ -29,9 +29,9 @@ export const LP_DATA = {
       m: "LIS",
       title: "Listopadový běh",
       range: "Příprava 9. – 13. 11. · zkoušky 16. – 20. 11. 2026",
-      cap: "Poslední 2 místa",
-      capLevel: "low" as "low" | "ok" | "full",
-      featured: true,
+      cap: "Plná kapacita",
+      capLevel: "full" as "low" | "ok" | "full",
+      featured: false,
     },
     {
       d: "4",
@@ -40,7 +40,7 @@ export const LP_DATA = {
       range: "Příprava 4. – 8. 1. · zkoušky 11. – 15. 1. 2027",
       cap: "",
       capLevel: "ok" as "low" | "ok" | "full",
-      featured: false,
+      featured: true,
     },
     {
       d: "1",
