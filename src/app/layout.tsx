@@ -84,6 +84,7 @@ const organizationLd = {
     addressRegion: ORG.region,
     addressCountry: ORG.country,
   },
+  sameAs: [ORG.facebook, ORG.firmyCz],
 };
 
 export default function RootLayout({

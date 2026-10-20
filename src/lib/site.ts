@@ -28,4 +28,8 @@ export const ORG = {
   ico: "08913757",
   phone: "+420 601 002 989",
   email: "info@voltimo.cz",
+  facebook: "https://www.facebook.com/profile.php?id=61586226418538",
+  firmyCz:
+    "https://www.firmy.cz/detail/13990335-stredisko-profesniho-vzdelavani-voltimo-prestice.html",
+  googleReview: "https://g.page/r/CXEug9oa2mnGEBM/review",
 } as const;

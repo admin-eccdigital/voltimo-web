@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { LP_DATA } from "@/lib/lp-data";
+import { ORG } from "@/lib/site";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -67,6 +68,15 @@ export function SiteFooter() {
             <Link href="/o-nas/">O nás</Link>
             <Link href="/faq/">Časté dotazy</Link>
             <Link href="/kontakt/">Kontakt</Link>
+          </nav>
+          <nav className="site-footer__nav" aria-label="Spojte se s námi">
+            <span className="site-footer__nav-h">Spojte se</span>
+            <a href={ORG.googleReview} target="_blank" rel="noopener noreferrer">
+              Ohodnoťte nás na Googlu
+            </a>
+            <a href={ORG.facebook} target="_blank" rel="noopener noreferrer">
+              Facebook
+            </a>
           </nav>
         </div>
         <div className="site-footer__legal">

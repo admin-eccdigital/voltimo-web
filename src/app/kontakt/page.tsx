@@ -43,9 +43,10 @@ const contactLd = {
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "17:00",
+    opens: "08:00",
+    closes: "15:00",
   },
+  sameAs: [ORG.facebook, ORG.firmyCz],
 };
 
 export default function KontaktPage() {
@@ -79,7 +80,7 @@ export default function KontaktPage() {
                   +420 601 002 989
                 </a>
                 <span className="kt-phone__note">
-                  Po–pá 9:00–17:00 · nebo nám nechte číslo a ozveme se
+                  Po–pá 8:00–15:00 · nebo nám nechte číslo a ozveme se
                 </span>
               </div>
               <Button variant="cta" size="lg" href="tel:+420601002989">
@@ -130,7 +131,7 @@ export default function KontaktPage() {
                 </span>
                 <span className="kt-card__label">Provozní doba</span>
                 <span className="kt-card__value">Pondělí až pátek</span>
-                <span className="kt-card__desc">9:00 – 17:00</span>
+                <span className="kt-card__desc">8:00 – 15:00</span>
               </div>
             </div>
           </FadeIn>
