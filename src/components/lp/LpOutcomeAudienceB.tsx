@@ -14,7 +14,7 @@ const WHY = [
   "Elektrikářů je nedostatek — práce je hned",
   "Průměrný výdělek 45 000 Kč měsíčně",
   "Po roce praxe si můžete otevřít vlastní živnost",
-  "Školu ani předchozí praxi nepotřebujete",
+  "Nedodělaná škola nevadí — papír doženete zkouškou",
 ];
 
 export function LpOutcomeAudienceB() {

@@ -4,6 +4,7 @@ import { FadeIn } from "./FadeIn";
 
 const YES = [
   "Zedník, údržbář, OSVČ nebo hodinový manžel, co elektriku reálně dělá",
+  "Kdo nedodělal učňák nebo střední a chce konečně papír",
   "Montér fotovoltaiky nebo chlazení, který se elektriky denně dotýká",
   "Zkušený z oboru, co potřebuje jen §6 pro samostatnou práci",
   "Manuálně zručný člověk, co umí se šroubovákem",
