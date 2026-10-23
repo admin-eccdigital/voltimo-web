@@ -15,6 +15,8 @@ export type PoradnaCta = {
 export type PoradnaRelated = { label: string; href?: string };
 export type PoradnaTocItem = { id: string; label: string };
 
+export type PoradnaPillar = "elektro" | "chlazeni";
+
 export interface PoradnaMeta {
   slug: string;
   title: string;
@@ -22,6 +24,7 @@ export interface PoradnaMeta {
   description: string;
   kicker: string;
   category: string;
+  pillar: PoradnaPillar;
   answer: string;
   readingMinutes: number;
   updated: string;
@@ -82,6 +85,9 @@ export function getArticle(slug: string): PoradnaArticle {
     description: meta.description ?? "",
     kicker: meta.kicker ?? "",
     category: meta.category ?? "",
+    // Obor odvozujeme ze slugu: chlazení slugy obsahují „chlad" (chladař) nebo
+    // „chlaz" (chlazení). Elektro slugy ani jedno.
+    pillar: /chla[dz]/.test(slug) ? "chlazeni" : "elektro",
     answer: meta.answer ?? "",
     readingMinutes: meta.readingMinutes ?? Math.max(1, Math.round(rt.minutes)),
     updated: meta.updated ?? "2026",

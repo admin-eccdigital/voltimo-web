@@ -105,12 +105,24 @@
   color: var(--voltimo-sky);
   font-weight: var(--fw-semibold);
 }
-.poradna-listcard h2 {
+.poradna-listcard h3 {
   color: var(--text-heading);
   font-size: 21px;
   margin: 8px 0;
   line-height: var(--lh-tight);
   text-wrap: balance;
+}
+/* Nadpis sekce výpisu (Elektrikář / Chlazení) */
+.poradna-list__head {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  margin-bottom: 22px;
+}
+.poradna-list__lead {
+  color: var(--text-muted);
+  font-size: var(--fs-small);
+  margin: 6px 0 0;
+  max-width: 60ch;
 }
 .poradna-listcard p { color: var(--text-muted); font-size: var(--fs-small); margin: 0 0 14px; }
 .poradna-listcard__go {

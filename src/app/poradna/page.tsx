@@ -31,36 +31,59 @@ export default function PoradnaPage() {
         </div>
       </section>
 
-      <section className="poradna-list">
-        <div className="poradna-list__grid">
-          {articles.map((a) => (
-            <a
-              className="poradna-listcard"
-              href={`${basePath}/poradna/${a.slug}/`}
-              key={a.slug}
-            >
-              {a.hero && (
-                <span className="poradna-listcard__img">
-                  <Image
-                    src={`${basePath}/photos/${a.hero}`}
-                    alt={a.heroAlt ?? a.title}
-                    width={640}
-                    height={360}
-                  />
-                </span>
-              )}
-              <span className="poradna-listcard__body">
-                <span className="poradna-listcard__cat">{a.category}</span>
-                <h2>{a.title}</h2>
-                <p>{a.description}</p>
-                <span className="poradna-listcard__go">
-                  Číst článek <ArrowRight size={17} />
-                </span>
-              </span>
-            </a>
-          ))}
-        </div>
-      </section>
+      {(
+        [
+          {
+            key: "elektro",
+            label: "Elektrikář",
+            lead: "Kvalifikace, § 6 a § 7, rekvalifikace a cesta do profese elektrikáře.",
+          },
+          {
+            key: "chlazeni",
+            label: "Chlazení",
+            lead: "Profesní kvalifikace chlaďaře, zkouška, živnost a servis chladicí techniky.",
+          },
+        ] as const
+      ).map((sec) => {
+        const items = articles.filter((a) => a.pillar === sec.key);
+        if (items.length === 0) return null;
+        return (
+          <section className="poradna-list" key={sec.key}>
+            <div className="poradna-list__head">
+              <Heading as="h2">{sec.label}</Heading>
+              <p className="poradna-list__lead">{sec.lead}</p>
+            </div>
+            <div className="poradna-list__grid">
+              {items.map((a) => (
+                <a
+                  className="poradna-listcard"
+                  href={`${basePath}/poradna/${a.slug}/`}
+                  key={a.slug}
+                >
+                  {a.hero && (
+                    <span className="poradna-listcard__img">
+                      <Image
+                        src={`${basePath}/photos/${a.hero}`}
+                        alt={a.heroAlt ?? a.title}
+                        width={640}
+                        height={360}
+                      />
+                    </span>
+                  )}
+                  <span className="poradna-listcard__body">
+                    <span className="poradna-listcard__cat">{a.category}</span>
+                    <h3>{a.title}</h3>
+                    <p>{a.description}</p>
+                    <span className="poradna-listcard__go">
+                      Číst článek <ArrowRight size={17} />
+                    </span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
 
       <section className="poradna-entries">
         <div className="poradna-entries__grid">
