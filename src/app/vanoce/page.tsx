@@ -92,7 +92,7 @@ export default function VanocePage() {
           </HeroItem>
           <HeroItem>
             <h1 className="lp-hero__tabs">
-              <YellowLabel lines={["Umíš dělat rukama?", "Dožeň si papír."]} size="lg" />
+              <YellowLabel lines={["Nový rok,", "nová kvalifikace."]} size="lg" />
             </h1>
           </HeroItem>
           <HeroItem>
@@ -111,7 +111,7 @@ export default function VanocePage() {
               <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
                 Vybrat kurz na 2027
               </Button>
-              <Button variant="outline" size="lg" className="chl-btn-ondark" icon={<Gift />} href="#darek">
+              <Button variant="outline" size="lg" className="chl-btn-ondark" icon={<Gift />} href="#kurzy">
                 Darovat kurz pod stromeček
               </Button>
             </div>
@@ -304,11 +304,11 @@ export default function VanocePage() {
                   Dítě nedodělalo školu a neví, kam dál? Nebo chce konečně dělat
                   rukama a mít papír? Darujte mu kurz elektrikáře nebo chlazení.
                   Poukaz rozbalí u stromečku, na kurz nastoupí na jaře a má v ruce
-                  řemeslo, které ho uživí. Napište si o něj do 24. 12., ať je pod
-                  stromečkem včas.
+                  řemeslo, které ho uživí. Vyberte kurz a objednejte poukaz do
+                  24. 12., ať je pod stromečkem včas.
                 </p>
-                <Button variant="cta" icon={<ArrowRight />} href={`${basePath}/kontakt/`}>
-                  Chci dárkový poukaz
+                <Button variant="cta" icon={<ArrowRight />} href="#kurzy">
+                  Vybrat kurz a darovat
                 </Button>
               </div>
               <div className="vn-gift__art" aria-hidden="true">
@@ -343,7 +343,7 @@ export default function VanocePage() {
       {/* ZÁVĚR */}
       <Section tone="dark">
         <div className="lp-wrap vn-final">
-          <Heading level={2}>Nový rok, nová kvalifikace.</Heading>
+          <Heading level={2}>Nezmeškejte jaro 2027.</Heading>
           <p>Letos je plno. Jaro 2027 je na dosah. Registrujte se do 24. 12. a místo je vaše.</p>
           <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
             Vybrat kurz na 2027
