@@ -71,7 +71,7 @@ const WHY = [
 ] as const;
 
 const FAQ = [
-  { q: "Musím mít praxi nebo vzdělání?", a: "Pro samotnou zkoušku stačí 18 let, základní vzdělání a zdravotní způsobilost. Doučíme vás, co budete v praxi potřebovat." },
+  { q: "Musím mít praxi nebo vzdělání?", a: "Pro samotnou zkoušku stačí 18 let, základní vzdělání a zdravotní způsobilost. Nedodělaný učňák nebo střední nevadí. Doučíme vás, co budete v praxi potřebovat." },
   { q: "Jak rychle začnu po přihlášení?", a: "Termíny vypisujeme průběžně. Po poptávce vás kontaktujeme a domluvíme nejbližší vhodný termín." },
   { q: "Jaký je rozdíl mezi kvalifikací 23-054-H a 23-055-H?", a: "Malá (23-054-H) se ověřuje na systémech do 3 kg chladiva, u hermetických okruhů do 6 kg. Velká (23-055-H) pracuje nad těmito hranicemi a navíc s vícekompresorovými sdruženými jednotkami a jejich řízením. U nás připravujeme na obě." },
   { q: "Potřebuju na chlazení živnost a jak ji získám?", a: "Montáž a servis chlazení je řemeslná živnost, takže musíte doložit odbornou způsobilost. Profesní kvalifikace z NSK je jedna z přímých cest. První ohlášení živnosti stojí 1 000 Kč a zápis bývá do 5 pracovních dnů." },
@@ -90,6 +90,7 @@ const CHL_DATES: readonly {
   { d: "30", m: "LIS", title: "Prosincový běh", range: "Příprava 30. 11. – 1. 12. · zkoušky 2. – 3. 12. 2026", cap: "Plná kapacita", capLevel: "full", featured: false },
   { d: "11", m: "LED", title: "Lednový běh 2027", range: "Příprava 11. – 12. 1. · zkoušky 13. – 14. 1. 2027", cap: "", capLevel: "ok", featured: true },
   { d: "8", m: "ÚNO", title: "Únorový běh 2027", range: "Příprava 8. – 9. 2. · zkoušky 10. – 11. 2. 2027", cap: "", capLevel: "ok", featured: false },
+  { d: "8", m: "BŘE", title: "Březnový běh 2027", range: "Příprava 8. – 9. 3. · zkoušky 10. – 11. 3. 2027", cap: "", capLevel: "ok", featured: false },
 ];
 
 const courseLd = {
@@ -163,6 +164,23 @@ const courseLd = {
       courseMode: "onsite",
       startDate: "2027-02-08",
       endDate: "2027-02-11",
+      location: {
+        "@type": "Place",
+        name: ORG.legalName,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: ORG.street,
+          addressLocality: ORG.city,
+          postalCode: ORG.zip,
+          addressCountry: ORG.country,
+        },
+      },
+    },
+    {
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      startDate: "2027-03-08",
+      endDate: "2027-03-11",
       location: {
         "@type": "Place",
         name: ORG.legalName,

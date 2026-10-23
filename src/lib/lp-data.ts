@@ -51,6 +51,15 @@ export const LP_DATA = {
       capLevel: "ok" as "low" | "ok" | "full",
       featured: false,
     },
+    {
+      d: "1",
+      m: "BŘE",
+      title: "Březnový běh 2027",
+      range: "Příprava 1. – 5. 3. · zkoušky 8. – 12. 3. 2027",
+      cap: "",
+      capLevel: "ok" as "low" | "ok" | "full",
+      featured: false,
+    },
   ],
 } as const;
 

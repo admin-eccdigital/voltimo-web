@@ -22,6 +22,14 @@ const ELEKTRO_2027 = LP_DATA.dates.filter((d) => d.title.includes("2027"));
 const CHL_2027 = [
   { title: "Lednový běh 2027", range: "Zkoušky 13. – 14. 1. 2027" },
   { title: "Únorový běh 2027", range: "Zkoušky 10. – 11. 2. 2027" },
+  { title: "Březnový běh 2027", range: "Zkoušky 10. – 11. 3. 2027" },
+];
+
+const CLANKY = [
+  { t: "Jak se stát elektrikářem bez školy", href: "/poradna/jak-se-stat-elektrikarem-bez-skoly/" },
+  { t: "Jak se stát chlaďařem", href: "/poradna/jak-se-stat-chladarem/" },
+  { t: "Nedodělal jsem školu. Můžu dělat elektrikáře?", href: "/poradna/nedodelal-jsem-skolu-muzu-delat-elektrikare/" },
+  { t: "Jak získat §6 pro elektrikáře", href: "/poradna/jak-ziskat-paragraf-6/" },
 ];
 
 const PERSONAS = [
@@ -220,9 +228,9 @@ export default function VanocePage() {
                 <Button variant="cta" block icon={<ArrowRight />} href={`${basePath}/elektrikar-za-10-dni/#registrace`}>
                   Zamluvit místo
                 </Button>
-                <a className="vn-course__more" href={`${basePath}/elektrikar-za-10-dni/`}>
-                  Více o kurzu <ArrowRight size={14} />
-                </a>
+                <Button variant="outline" block href={`${basePath}/elektrikar-za-10-dni/`}>
+                  Více o kurzu a vše o přihlášení
+                </Button>
               </div>
 
               {/* CHLAZENÍ */}
@@ -247,9 +255,9 @@ export default function VanocePage() {
                 <Button variant="cta" block icon={<ArrowRight />} href={`${basePath}/chlazeni/#poptavka`}>
                   Zamluvit místo
                 </Button>
-                <a className="vn-course__more" href={`${basePath}/chlazeni/`}>
-                  Více o kurzu <ArrowRight size={14} />
-                </a>
+                <Button variant="outline" block href={`${basePath}/chlazeni/`}>
+                  Více o kurzu a vše o přihlášení
+                </Button>
               </div>
             </div>
           </div>
@@ -333,6 +341,16 @@ export default function VanocePage() {
                   <strong>{r.t}</strong>
                   <p>{r.d}</p>
                   <span className="vn-nav__go">Otevřít <ArrowRight size={16} /></span>
+                </a>
+              ))}
+            </div>
+
+            <p className="vn-nav__subhead">Než se rozhodnete, přečtěte si</p>
+            <div className="vn-nav">
+              {CLANKY.map((c) => (
+                <a className="vn-nav__card vn-nav__card--article" key={c.href} href={`${basePath}${c.href}`}>
+                  <strong>{c.t}</strong>
+                  <span className="vn-nav__go">Číst článek <ArrowRight size={16} /></span>
                 </a>
               ))}
             </div>

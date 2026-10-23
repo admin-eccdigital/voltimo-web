@@ -151,6 +151,8 @@
 .vn-nav__card strong { color: var(--text-heading); font-size: 17px; }
 .vn-nav__card p { margin: 0; flex: 1; color: var(--text-body); font-size: 14px; line-height: 1.5; }
 .vn-nav__go { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; color: var(--voltimo-primary); font-weight: var(--fw-semibold); font-size: 14px; }
+.vn-nav__subhead { margin: 44px 0 20px; text-align: center; font-weight: var(--fw-bold); color: var(--text-heading); font-size: 20px; }
+.vn-nav__card--article strong { font-size: 15.5px; flex: 1; }
 
 /* ZÁVĚR */
 .vn-final { text-align: center; max-width: 640px; }
