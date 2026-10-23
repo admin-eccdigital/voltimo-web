@@ -8,6 +8,9 @@ import {
   CestaChladar,
   CestaZivnostChlazeni,
   ChladarMalaVelka,
+  CestaZkouskaChladar,
+  KompetenceMala,
+  KompetenceVelka,
 } from "./CestaInfografika";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -143,4 +146,7 @@ export const mdxComponents = {
   CestaChladar,
   CestaZivnostChlazeni,
   ChladarMalaVelka,
+  CestaZkouskaChladar,
+  KompetenceMala,
+  KompetenceVelka,
 };

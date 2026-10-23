@@ -223,3 +223,77 @@ export function ChladarMalaVelka() {
     </figure>
   );
 }
+
+// Proces zkoušky profesní kvalifikace chlaďaře.
+const ZKOUSKA_CHLADAR: readonly Step[] = [
+  { n: "1", t: "Doklady + zdravotní způsobilost", d: "Lékařské potvrzení předem" },
+  { n: "2", t: "Seznámení s pracovištěm a BOZP", d: "Pořizuje se písemný záznam" },
+  { n: "3", t: "Písemné ověření", d: "Nejvýše 120 minut" },
+  { n: "4", t: "Praktické úkoly na zařízení", d: "Diagnostika, montáž, těsnost, chladivo" },
+  { n: "5", t: "Vyhodnocení kompetencí", d: "Každá: splnil / nesplnil" },
+  { n: "6", t: "Výsledek", d: "Vyhověl, nebo nevyhověl" },
+];
+
+export function CestaZkouskaChladar() {
+  return (
+    <Cesta
+      label="Jak vypadá zkouška chlaďaře · příprava 30 min · zkouška 6–8 h"
+      steps={ZKOUSKA_CHLADAR}
+      variant="hl"
+    />
+  );
+}
+
+// Kompetenční mřížka chlaďaře (co musí mechanik umět).
+function KompetenceGrid({ code, items }: { code: string; items: readonly string[] }) {
+  return (
+    <figure className="poradna-komp" aria-label={`Kompetence – ${code}`}>
+      <span className="poradna-komp__code">{code}</span>
+      <ol className="poradna-komp__grid">
+        {items.map((it, i) => (
+          <li className="poradna-komp__item" key={it}>
+            <span className="poradna-komp__num">{i + 1}</span>
+            <span>{it}</span>
+          </li>
+        ))}
+      </ol>
+    </figure>
+  );
+}
+
+export function KompetenceMala() {
+  return (
+    <KompetenceGrid
+      code="PK 23-054-H · malá zařízení"
+      items={[
+        "Chladicí okruh",
+        "Komponenty a funkce",
+        "Diagnostika",
+        "Detekce úniků",
+        "Montáž a spuštění",
+        "Vakuování a zkoušky",
+        "Chladivo a olej",
+        "Dokumentace a BOZP",
+      ]}
+    />
+  );
+}
+
+export function KompetenceVelka() {
+  return (
+    <KompetenceGrid
+      code="PK 23-055-H · velká zařízení"
+      items={[
+        "Chladicí okruh",
+        "Velké systémy",
+        "Technická dokumentace",
+        "Diagnostika",
+        "Detekce úniků",
+        "Montáž a spuštění",
+        "Více kompresorů a řízení",
+        "Chladivo a olej",
+        "Bezpečnost",
+      ]}
+    />
+  );
+}

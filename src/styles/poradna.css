@@ -404,6 +404,38 @@
 }
 .poradna-p67__steps li { display: inline; }
 
+/* Kompetenční mřížka chlaďaře */
+.poradna-komp { margin: 28px 0; }
+.poradna-komp__code {
+  display: inline-block;
+  background: var(--voltimo-primary);
+  color: var(--voltimo-yellow);
+  font-weight: var(--fw-semibold);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+}
+.poradna-komp__grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr; gap: 10px;
+}
+@media (min-width: 560px) { .poradna-komp__grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 820px) { .poradna-komp__grid { grid-template-columns: 1fr 1fr 1fr; } }
+.poradna-komp__item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-size: 14px; font-weight: var(--fw-semibold); color: var(--text-heading);
+}
+.poradna-komp__num {
+  flex: none; width: 26px; height: 26px; border-radius: var(--radius-full);
+  background: var(--voltimo-primary); color: var(--voltimo-yellow);
+  display: flex; align-items: center; justify-content: center; font-size: 13px;
+}
+
 /* CTA v článku */
 .poradna-cta {
   background: linear-gradient(135deg, var(--voltimo-primary), var(--voltimo-primary-hover));
