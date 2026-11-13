@@ -8,9 +8,10 @@ export default function robots(): MetadataRoute.Robots {
   if (NOINDEX) {
     return { rules: [{ userAgent: "*", disallow: "/" }] };
   }
-  // Produkce: povolit vše kromě interní design-system stránky.
+  // Produkce: povolit vše kromě interní design-system stránky
+  // a sekce /f-plyny/ (zatím mimo index, přístupná jen přímým odkazem).
   return {
-    rules: [{ userAgent: "*", allow: "/", disallow: ["/design-system/"] }],
+    rules: [{ userAgent: "*", allow: "/", disallow: ["/design-system/", "/f-plyny/"] }],
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
