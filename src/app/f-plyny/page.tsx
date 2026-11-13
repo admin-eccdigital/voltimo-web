@@ -105,8 +105,8 @@ const FAQ = [
     a: "Od roku 2024 platí nové evropské nařízení o F-plynech (2024/573) a nový systém certifikace osob (2024/2215). Staré kategorie I–IV nahradily nové A–E. Certifikát A1 navazuje na dřívější nejvyšší kategorii – plný rozsah bez omezení náplně. Certifikáty nově vydává přímo pověřený subjekt a platí na dobu neurčitou.",
   },
   {
-    q: "Musím mít praxi nebo vzdělání?",
-    a: "Ke zkoušce není potřeba dokládat vzdělání ani praxi. Příprava vás provede vším, co u zkoušky i v praxi potřebujete.",
+    q: "Musím kvůli zkoušce absolvovat přípravu?",
+    a: "Nemusíte. Certifikační zkouška nemá žádné vstupní podmínky – nevyžaduje se vzdělání, praxe ani absolvování přípravy. Pětidenní přípravu nabízíme jako doprovodnou službu, ať ke zkoušce přijdete připravení.",
   },
   {
     q: "Jak dlouho certifikát platí?",
