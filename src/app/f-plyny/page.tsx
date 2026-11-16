@@ -22,8 +22,6 @@ export const metadata: Metadata = {
   description:
     "Pětidenní kurz zakončený certifikační zkouškou F-plyny A1. Oprávnění pracovat s chladivy na chlazení, klimatizacích a tepelných čerpadlech. Prezenčně v Přešticích, kapacita 10 lidí.",
   alternates: { canonical: `${SITE_URL}/f-plyny/` },
-  // Sekce F-plyny zatím není v menu ani v indexu – přístupná jen přes přímý odkaz.
-  robots: { index: false, follow: false },
 };
 
 const QUICK = [

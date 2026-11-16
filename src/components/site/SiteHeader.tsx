@@ -24,6 +24,7 @@ const NAV_ITEMS: readonly NavItem[] = [
     ],
   },
   { label: "Chlazení", href: "/chlazeni/" },
+  { label: "F-plyny", href: "/f-plyny/" },
   { label: "Poradna", href: "/poradna/" },
   { label: "O nás", href: "/o-nas/" },
   { label: "FAQ", href: "/faq/" },

@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description:
     "Informace pro uchazeče o certifikační zkoušce F-plyny (certifikát A1) ve Středisku profesního vzdělávání VOLTIMO s.r.o. Průběh zkoušky, kritéria a zkušební podmínky.",
   alternates: { canonical: `${SITE_URL}/f-plyny/zkusebni-podminky/` },
-  robots: { index: false, follow: false },
 };
 
 export default function FplynyPodminkyPage() {
