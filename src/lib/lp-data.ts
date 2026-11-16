@@ -52,10 +52,10 @@ export const LP_DATA = {
       featured: false,
     },
     {
-      d: "1",
+      d: "15",
       m: "BŘE",
       title: "Březnový běh 2027",
-      range: "Příprava 1. – 5. 3. · zkoušky 8. – 12. 3. 2027",
+      range: "Příprava 15. – 19. 3. · zkoušky 22. – 26. 3. 2027",
       cap: "",
       capLevel: "ok" as "low" | "ok" | "full",
       featured: false,
