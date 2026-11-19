@@ -95,12 +95,12 @@
 
 /* ---- Responsive ---- */
 /* Mezipásmo: ať se vejde plná lišta, telefon se zúží na ikonu (zůstává tel: odkaz). */
-@media (max-width: 1240px) {
+@media (max-width: 1180px) {
   .site-header__phone span { display: none; }
 }
 
-/* Pod 1120 px je položek moc: celá lišta se skládá do hamburgeru. */
-@media (max-width: 1120px) {
+/* Pod 1060 px je položek moc: celá lišta se skládá do hamburgeru. */
+@media (max-width: 1060px) {
   .site-header__nav { display: none; }
   .site-header__phone { display: none; }
   .site-header__testy { display: none; }

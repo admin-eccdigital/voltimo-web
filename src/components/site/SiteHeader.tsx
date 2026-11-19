@@ -14,7 +14,6 @@ type NavItem = {
 };
 
 const NAV_ITEMS: readonly NavItem[] = [
-  { label: "Úvod", href: "/" },
   {
     label: "Elektro",
     href: "/elektrikar-za-10-dni/",

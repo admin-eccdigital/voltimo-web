@@ -476,10 +476,10 @@ export default function ChlazeniPage() {
                 <a href={`${basePath}/elektrikar-za-10-dni/`}>elektro u nás děláme také</a>.
               </p>
               <p className="chl-note chl-note--fplyn">
-                <strong>F-plyny brzy u nás.</strong> Pro samostatnou práci s
-                chladivy je potřeba i certifikát na F-plyny. Autorizaci
-                teprve dokončujeme, čekáme na vydání povolení. Kdo u nás
-                absolvuje chlazení teď, dostane F-plyny se slevou.
+                <strong>F-plyny A1 u nás také.</strong> Pro samostatnou práci s
+                chladivy je kromě kvalifikace chladaře potřeba i certifikát
+                F-plyny. Děláme ho teď taky:{" "}
+                <a href={`${basePath}/f-plyny/`}>certifikát F-plyny A1</a>.
               </p>
               <div style={{ marginTop: 22 }}>
                 <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">

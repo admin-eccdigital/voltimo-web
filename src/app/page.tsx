@@ -191,6 +191,22 @@ export default function HomePage() {
                 </span>
               </a>
             </FadeIn>
+            <FadeIn>
+              <a className="hp-pick hp-pick--f" href={`${basePath}/f-plyny/`}>
+                <span className="hp-pick__kicker">Certifikát A1</span>
+                <h3 className="hp-pick__title">F-plyny za 5 dní</h3>
+                <p className="hp-pick__desc">
+                  Certifikace pro práci s chladivy. Plný rozsah bez omezení
+                  náplně, platí na dobu neurčitou.
+                </p>
+                <span className="hp-pick__price">
+                  23 500 Kč <small>bez DPH</small>
+                </span>
+                <span className="hp-pick__go">
+                  Chci certifikát F-plyny <ArrowRight size={17} />
+                </span>
+              </a>
+            </FadeIn>
           </div>
           <FadeIn>
             <a className="hp-choose__strip" href={`${basePath}/rekvalifikace/`}>

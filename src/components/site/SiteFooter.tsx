@@ -65,6 +65,7 @@ export function SiteFooter() {
             <Link href="/elektrikar-za-10-dni/">Elektrikář za 10 dní</Link>
             <Link href="/rekvalifikace/">Rekvalifikace přes ÚP</Link>
             <Link href="/chlazeni/">Chlazení</Link>
+            <Link href="/f-plyny/">F-plyny (certifikát A1)</Link>
             <Link href="/o-nas/">O nás</Link>
             <Link href="/faq/">Časté dotazy</Link>
             <Link href="/kontakt/">Kontakt</Link>

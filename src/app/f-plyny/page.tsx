@@ -253,6 +253,11 @@ export default function FplynyPage() {
                   Přihlásit se na kurz
                 </Button>
               </div>
+              <p className="chl-note" style={{ marginTop: 18 }}>
+                Děláte servis chlazení a klimatizací? Profesní kvalifikaci
+                chladaře (23-054 a 23-055) u nás uděláte taky:{" "}
+                <a href={`${basePath}/chlazeni/`}>kurz chlazení za 4 dny</a>.
+              </p>
             </div>
 
             <div className="lp-cert">

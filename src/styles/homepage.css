@@ -261,7 +261,7 @@
 .hp-choose { padding: clamp(3.5rem, 2.5rem + 4vw, 6rem) var(--container-pad); background: var(--surface-page); }
 .hp-choose__inner { max-width: var(--container-max); margin: 0 auto; }
 .hp-choose__head { text-align: center; margin-bottom: 40px; }
-.hp-choose__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hp-choose__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .hp-pick {
   display: flex; flex-direction: column; gap: 8px;
   background: var(--surface-card); border: 2px solid var(--border-default);
@@ -272,6 +272,7 @@
 .hp-pick:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .hp-pick--e:hover { border-color: var(--voltimo-yellow); }
 .hp-pick--c:hover { border-color: var(--voltimo-sky); }
+.hp-pick--f:hover { border-color: var(--voltimo-primary); }
 .hp-pick__kicker { font-size: var(--fs-label); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: var(--ls-label); color: var(--text-muted); }
 .hp-pick__title { margin: 2px 0 4px; font-size: var(--fs-h3); font-weight: var(--fw-bold); color: var(--text-heading); letter-spacing: -0.01em; }
 .hp-pick__desc { margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text-muted); flex: 1; }
@@ -297,8 +298,11 @@
 .hp-choose__strip-text { flex: 1 1 300px; display: flex; flex-direction: column; gap: 5px; }
 .hp-choose__strip strong { color: var(--voltimo-yellow); font-size: 20px; font-weight: var(--fw-bold); line-height: 1.25; }
 .hp-choose__strip-go { display: inline-flex; align-items: center; gap: 8px; background: var(--voltimo-yellow); color: var(--voltimo-primary); border-radius: var(--radius-full); padding: 13px 24px; font-weight: var(--fw-bold); font-size: 15px; white-space: nowrap; }
-@media (max-width: 640px) {
+/* 3 obory v řadě jen na širším desktopu; níž se skládají pod sebe. */
+@media (max-width: 900px) {
   .hp-choose__cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
   .hp-choose__strip { padding: 22px; gap: 16px; }
   .hp-choose__strip-go { width: 100%; justify-content: center; }
 }
