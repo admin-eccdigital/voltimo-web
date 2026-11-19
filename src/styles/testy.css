@@ -1,0 +1,92 @@
+/* Voltimo — rozcestník online testů (/testy).
+   Login-gated portál (Moodle) na testy.voltimo.cz — tahle stránka vysvětluje
+   a posílá na přihlášení, není to marketingová landing. */
+
+.testy { display: block; }
+
+/* ---- Hero ---- */
+.testy-hero {
+  background: var(--surface-page);
+  border-bottom: 1px solid var(--border-default);
+}
+.testy-hero__inner {
+  max-width: 760px; margin-inline: auto;
+  padding: var(--space-2xl) var(--container-pad) var(--space-xl);
+  text-align: center;
+}
+.testy-hero__h1 { margin: 12px 0 0; }
+.testy-hero__lead {
+  margin: 18px auto 0; max-width: 620px;
+  font-size: var(--fs-lead, 1.125rem); line-height: var(--lh-body);
+  color: var(--text-body);
+}
+.testy-hero__cta { margin-top: var(--space-lg); }
+.testy-hero__note {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: var(--space-lg) auto 0; max-width: 540px;
+  font-size: var(--fs-small); color: var(--text-muted);
+}
+.testy-hero__note svg { width: 16px; height: 16px; flex: none; color: var(--voltimo-sky); }
+.testy-hero__note a { color: var(--text-link-accent); font-weight: var(--fw-semibold); text-decoration: none; }
+.testy-hero__note a:hover { text-decoration: underline; }
+
+/* ---- Okruhy (karty) ---- */
+.testy-okruhy {
+  background: var(--surface-subtle);
+}
+.testy-okruhy__inner {
+  max-width: var(--container-max); margin-inline: auto;
+  padding: var(--space-2xl) var(--container-pad);
+}
+.testy-okruhy__h2 { text-align: center; margin: 0 0 var(--space-xl); }
+.testy-okruhy__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg);
+}
+.testy-card {
+  display: flex; flex-direction: column; gap: 12px;
+  background: var(--surface-card); border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg); padding: var(--space-lg);
+}
+.testy-card--soon { opacity: 0.72; }
+.testy-card__tag {
+  display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+  padding: 5px 11px; border-radius: var(--radius-full);
+  font-size: 12px; font-weight: var(--fw-semibold); line-height: 1;
+}
+.testy-card__tag svg { width: 14px; height: 14px; }
+.testy-card__tag--live { background: var(--voltimo-sky-soft); color: var(--voltimo-primary); }
+.testy-card__tag--soon { background: var(--voltimo-primary-soft); color: var(--text-muted); }
+.testy-card__title { margin: 0; font-size: 1.125rem; font-weight: var(--fw-semibold); color: var(--text-heading); }
+.testy-card__text { margin: 0; font-size: var(--fs-small); line-height: var(--lh-body); color: var(--text-body); }
+.testy-okruhy__foot {
+  margin: var(--space-lg) 0 0; text-align: center;
+  font-size: var(--fs-small); color: var(--text-muted);
+}
+
+/* ---- Jak to funguje (pruh) ---- */
+.testy-jak { background: var(--surface-page); }
+.testy-jak__inner {
+  max-width: var(--container-max); margin-inline: auto;
+  padding: var(--space-xl) var(--container-pad) var(--space-2xl);
+}
+.testy-jak__list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg);
+}
+.testy-jak__item {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: var(--fs-small); line-height: var(--lh-body); color: var(--text-body);
+}
+.testy-jak__icon {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 38px; height: 38px; border-radius: var(--radius-full);
+  background: var(--voltimo-primary); color: var(--voltimo-yellow);
+}
+.testy-jak__icon svg { width: 18px; height: 18px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .testy-okruhy__grid { grid-template-columns: 1fr; }
+  .testy-jak__list { grid-template-columns: 1fr; gap: var(--space-md); }
+  .testy-hero__inner { padding-top: var(--space-xl); }
+}

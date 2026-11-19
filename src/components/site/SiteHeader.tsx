@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, ArrowRight, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, ArrowRight, Menu, X, ChevronDown, GraduationCap } from "lucide-react";
 import { Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 
@@ -129,6 +129,15 @@ export function SiteHeader() {
             <span>{LP_DATA.phone}</span>
           </a>
 
+          <Link
+            href="/testy"
+            className={`site-header__testy${normalizedPath === "/testy" ? " site-header__testy--active" : ""}`}
+            title="Online procvičování testů (pro přihlášené kurzanty)"
+          >
+            <GraduationCap />
+            <span>Online testy</span>
+          </Link>
+
           <Button
             variant="cta"
             size="sm"
@@ -195,6 +204,18 @@ export function SiteHeader() {
             })}
           </ul>
         </nav>
+        <div className="site-header__mobile-students">
+          <span className="site-header__mobile-group">Pro studenty</span>
+          <Link
+            href="/testy"
+            className={`site-header__mobile-link site-header__mobile-link--testy${normalizedPath === "/testy" ? " site-header__mobile-link--active" : ""}`}
+            aria-current={normalizedPath === "/testy" ? "page" : undefined}
+            onClick={() => setMenuOpen(false)}
+          >
+            <GraduationCap />
+            <span>Online testy</span>
+          </Link>
+        </div>
         <a className="site-header__mobile-phone" href={LP_DATA.phoneHref}>
           <Phone />
           <span>{LP_DATA.phone}</span>

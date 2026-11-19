@@ -8,7 +8,7 @@
 }
 .site-header__inner {
   max-width: var(--container-max); margin-inline: auto; padding: 12px var(--container-pad);
-  display: flex; align-items: center; gap: 20px;
+  display: flex; align-items: center; gap: 14px;
 }
 .site-header__logo { display: flex; flex: none; }
 .site-header__logo img { height: 48px; width: auto; }
@@ -17,11 +17,12 @@
 /* ---- Desktop nav ---- */
 .site-header__nav-list {
   list-style: none; margin: 0; padding: 0;
-  display: flex; align-items: center; gap: 4px;
+  display: flex; align-items: center; gap: 2px;
 }
 .site-header__nav-link {
-  display: block; padding: 8px 14px; border-radius: var(--radius-md);
+  display: block; padding: 8px 11px; border-radius: var(--radius-md);
   font-size: 15px; font-weight: var(--fw-semibold); color: var(--voltimo-primary);
+  white-space: nowrap;
   text-decoration: none; transition: background var(--transition-fast), color var(--transition-fast);
 }
 .site-header__nav-link:hover { background: var(--voltimo-primary-soft); }
@@ -35,10 +36,24 @@
 
 /* ---- Phone ---- */
 .site-header__phone {
-  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px; flex: none; text-decoration: none;
   font-weight: var(--fw-semibold); font-size: 15px; color: var(--voltimo-primary);
 }
+.site-header__phone span { white-space: nowrap; }
 .site-header__phone svg { width: 18px; height: 18px; color: var(--voltimo-sky); }
+
+/* ---- Online testy (sekundární "login" odkaz, ne žlutá CTA) ---- */
+.site-header__testy {
+  display: inline-flex; align-items: center; gap: 7px; flex: none;
+  padding: 8px 15px; border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  font-size: 14px; font-weight: var(--fw-semibold); line-height: 1;
+  color: var(--voltimo-primary); text-decoration: none; white-space: nowrap;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.site-header__testy:hover { background: var(--voltimo-primary-soft); border-color: var(--voltimo-sky); }
+.site-header__testy svg { width: 16px; height: 16px; color: var(--voltimo-sky); }
+.site-header__testy--active { border-color: var(--voltimo-sky); background: var(--voltimo-sky-soft); }
 
 /* ---- Hamburger ---- */
 .site-header__hamburger {
@@ -79,12 +94,24 @@
 .site-header__mobile-phone svg { width: 20px; height: 20px; color: var(--voltimo-sky); }
 
 /* ---- Responsive ---- */
-@media (max-width: 920px) {
+/* Mezipásmo: ať se vejde plná lišta, telefon se zúží na ikonu (zůstává tel: odkaz). */
+@media (max-width: 1240px) {
+  .site-header__phone span { display: none; }
+}
+
+/* Pod 1120 px je položek moc: celá lišta se skládá do hamburgeru. */
+@media (max-width: 1120px) {
   .site-header__nav { display: none; }
   .site-header__phone { display: none; }
+  .site-header__testy { display: none; }
   .site-header__cta { display: none; }
   .site-header__hamburger { display: flex; }
 }
+
+/* ---- Mobilní sekce "Pro studenty" ---- */
+.site-header__mobile-students { display: flex; flex-direction: column; gap: 2px; }
+.site-header__mobile-link--testy { display: inline-flex; align-items: center; gap: 10px; }
+.site-header__mobile-link--testy svg { width: 20px; height: 20px; color: var(--voltimo-sky); }
 
 /* ============================ SITE FOOTER ============================ */
 .site-footer__band {

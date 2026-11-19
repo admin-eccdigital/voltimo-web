@@ -12,6 +12,7 @@
 @import "../styles/cookie.css";
 @import "../styles/poradna.css";
 @import "../styles/vanoce.css";
+@import "../styles/testy.css";
 
 @theme inline {
   --color-voltimo-primary: #1E3876;
